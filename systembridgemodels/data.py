@@ -33,6 +33,6 @@ class Data(BaseModel):
 
 class DataDict(BaseModel):
     class Config:
-        extra = "allow"
+        extra = Extra.allow
 
     last_updated: dict[str, Optional[float]] = Field(..., description="Last updated")

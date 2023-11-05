@@ -11,6 +11,6 @@ class Generic(BaseModel):
     """
 
     class Config:
-        extra = "allow"
+        extra = Extra.allow
 
     last_updated: dict[str, float] = Field(..., description="Last updated")
