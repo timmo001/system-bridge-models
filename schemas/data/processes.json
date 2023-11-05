@@ -1,0 +1,41 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "description": "Processes",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Event ID"
+    },
+    "count": {
+      "type": "number"
+    },
+    "processes": {
+      "type": "array"
+    },
+    "last_updated": {
+      "type": "object",
+      "description": "Last updated",
+      "properties": {
+        "count": {
+          "type": "number"
+        },
+        "processes": {
+          "type": "number"
+        }
+      },
+      "additionalItems": {
+        "type": "number"
+      },
+      "required": [
+        "count",
+        "processes"
+      ]
+    }
+  },
+  "additionalItems": {},
+  "required": [
+    "count",
+    "processes"
+  ]
+}
