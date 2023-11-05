@@ -7,6 +7,12 @@
       "type": "string",
       "description": "Event ID"
     },
+    "active_user_id": {
+      "type": "number"
+    },
+    "active_user_name": {
+      "type": "string"
+    },
     "boot_time": {
       "type": "number"
     },

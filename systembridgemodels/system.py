@@ -33,6 +33,8 @@ class System(BaseModel):
     """
 
     id: Optional[str] = Field(None, description="Event ID")
+    active_user_id: Optional[float] = None
+    active_user_name: Optional[str] = None
     boot_time: float
     fqdn: str
     hostname: str
