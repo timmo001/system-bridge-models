@@ -5,7 +5,26 @@ from __future__ import annotations
 
 from typing import Optional
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Extra, Field
+
+
+class Process(BaseModel):
+    """
+    Process
+    """
+
+    class Config:
+        extra = Extra.allow
+
+    id: str = Field(..., description="ID")
+    name: str = Field(..., description="Name")
+    cpu_usage: Optional[float] = Field(None, description="CPU usage percentage")
+    created: Optional[float] = Field(None, description="Created time (epoch)")
+    memory_usage: Optional[float] = Field(None, description="Memory usage percentage")
+    path: Optional[str] = Field(None, description="Path")
+    status: Optional[str] = Field(None, description="Status")
+    username: Optional[str] = Field(None, description="Username")
+    working_directory: Optional[str] = Field(None, description="Working directory")
 
 
 class LastUpdated(BaseModel):
@@ -24,5 +43,5 @@ class Processes(BaseModel):
 
     id: Optional[str] = Field(None, description="Event ID")
     count: float
-    processes: list
+    processes: list[Process] = Field(..., description="Processes")
     last_updated: Optional[LastUpdated] = Field(None, description="Last updated")
