@@ -155,7 +155,5 @@
       }
     }
   },
-  "additionalProperties": {
-    "type": "number"
-  }
+  "additionalProperties": true
 }

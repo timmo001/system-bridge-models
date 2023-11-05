@@ -29,7 +29,7 @@ class Network(BaseModel):
     """
 
     class Config:
-        extra = "allow"
+        extra = Extra.allow
 
     id: Optional[str] = Field(None, description="Event ID")
     io_counters_bytes_sent: Optional[int] = None

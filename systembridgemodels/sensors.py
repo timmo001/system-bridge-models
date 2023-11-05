@@ -14,7 +14,7 @@ class Sensors(BaseModel):
     """
 
     class Config:
-        extra = "allow"
+        extra = Extra.allow
 
     id: Optional[str] = Field(None, description="Event ID")
     last_updated: Optional[dict[str, float]] = Field(None, description="Last updated")

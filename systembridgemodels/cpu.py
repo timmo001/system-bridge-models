@@ -5,7 +5,7 @@ from __future__ import annotations
 
 from typing import Optional
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Extra, Field
 
 
 class LastUpdated(BaseModel):
@@ -44,7 +44,7 @@ class Cpu(BaseModel):
     """
 
     class Config:
-        extra = "allow"
+        extra = Extra.allow
 
     id: Optional[str] = Field(None, description="Event ID")
     count: Optional[int] = None

@@ -22,7 +22,7 @@ class Display(BaseModel):
     """
 
     class Config:
-        extra = "allow"
+        extra = Extra.allow
 
     id: Optional[str] = Field(None, description="Event ID")
     displays: Optional[list] = None

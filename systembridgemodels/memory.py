@@ -32,7 +32,7 @@ class Memory(BaseModel):
     """
 
     class Config:
-        extra = "allow"
+        extra = Extra.allow
 
     id: Optional[str] = Field(None, description="Event ID")
     swap_total: Optional[int] = None

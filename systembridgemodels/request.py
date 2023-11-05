@@ -14,7 +14,7 @@ class Request(BaseModel):
     """
 
     class Config:
-        extra = "allow"
+        extra = Extra.allow
 
     api_key: Optional[str] = Field(None, description="API Key")
     id: Optional[str] = Field(None, description="Message ID")
