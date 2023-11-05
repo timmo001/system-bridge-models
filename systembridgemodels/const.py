@@ -16,6 +16,7 @@ from .network import Network
 from .notification import Notification
 from .open_path import OpenPath
 from .open_url import OpenUrl
+from .processes import Processes
 from .response import Response
 from .sensors import Sensors
 from .system import System
@@ -29,15 +30,16 @@ MODEL_GENERIC = "generic"
 MODEL_GPU = "gpu"
 MODEL_KEYBOARD_KEY = "keyboard_key"
 MODEL_KEYBOARD_TEXT = "keyboard_text"
+MODEL_MEDIA = "media"
 MODEL_MEDIA_DIRECTORIES = "media_directories"
 MODEL_MEDIA_FILE = "media_file"
 MODEL_MEDIA_FILES = "media_files"
-MODEL_MEDIA = "media"
 MODEL_MEMORY = "memory"
 MODEL_NETWORK = "network"
 MODEL_NOTIFICATION = "notification"
 MODEL_OPEN_PATH = "open_path"
 MODEL_OPEN_URL = "open_url"
+MODEL_PROCESSES = "processes"
 MODEL_RESPONSE = "response"
 MODEL_SECRETS = "secrets"
 MODEL_SENSORS = "sensors"
@@ -63,6 +65,7 @@ MODEL_MAP = {
     MODEL_NOTIFICATION: Notification,
     MODEL_OPEN_PATH: OpenPath,
     MODEL_OPEN_URL: OpenUrl,
+    MODEL_PROCESSES: Processes,
     MODEL_RESPONSE: Response,
     MODEL_SENSORS: Sensors,
     MODEL_SYSTEM: System,
