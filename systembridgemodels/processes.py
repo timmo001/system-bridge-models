@@ -16,7 +16,7 @@ class Process(BaseModel):
     class Config:
         extra = Extra.allow
 
-    id: str = Field(..., description="ID")
+    id: float = Field(..., description="ID")
     name: str = Field(..., description="Name")
     cpu_usage: Optional[float] = Field(None, description="CPU usage percentage")
     created: Optional[float] = Field(None, description="Created time (epoch)")
