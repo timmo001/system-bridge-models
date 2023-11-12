@@ -77,6 +77,9 @@
         "mac_address": {
           "type": "number"
         },
+        "pending_reboot": {
+          "type": "number"
+        },
         "platform": {
           "type": "number"
         },

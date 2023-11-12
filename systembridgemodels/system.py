@@ -20,6 +20,7 @@ class LastUpdated(BaseModel):
     hostname: float
     ip_address_4: float
     mac_address: float
+    pending_reboot: Optional[float] = None
     platform: float
     platform_version: float
     uptime: float
