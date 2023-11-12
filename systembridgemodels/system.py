@@ -40,6 +40,7 @@ class System(BaseModel):
     hostname: str
     ip_address_4: str
     mac_address: str
+    pending_reboot: Optional[bool] = None
     platform: str
     platform_version: str
     uptime: float

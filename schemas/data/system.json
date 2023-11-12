@@ -28,6 +28,9 @@
     "mac_address": {
       "type": "string"
     },
+    "pending_reboot": {
+      "type": "boolean"
+    },
     "platform": {
       "type": "string"
     },
