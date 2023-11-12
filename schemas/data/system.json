@@ -56,6 +56,12 @@
       "type": "object",
       "description": "Last updated",
       "properties": {
+        "active_user_id": {
+          "type": "number"
+        },
+        "active_user_name": {
+          "type": "number"
+        },
         "boot_time": {
           "type": "number"
         },
