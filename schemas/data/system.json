@@ -16,6 +16,12 @@
     "boot_time": {
       "type": "number"
     },
+    "camera_usage": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
     "fqdn": {
       "type": "string"
     },
@@ -63,6 +69,9 @@
           "type": "number"
         },
         "boot_time": {
+          "type": "number"
+        },
+        "camera_usage": {
           "type": "number"
         },
         "fqdn": {
