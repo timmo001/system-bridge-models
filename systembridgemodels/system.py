@@ -13,11 +13,14 @@ class LastUpdated(BaseModel):
     Last updated
     """
 
+    active_user_id: Optional[float] = None
+    active_user_name: Optional[float] = None
     boot_time: float
     fqdn: float
     hostname: float
     ip_address_4: float
     mac_address: float
+    pending_reboot: Optional[float] = None
     platform: float
     platform_version: float
     uptime: float
