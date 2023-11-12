@@ -16,6 +16,7 @@ class LastUpdated(BaseModel):
     active_user_id: Optional[float] = None
     active_user_name: Optional[float] = None
     boot_time: float
+    camera_usage: Optional[float] = None
     fqdn: float
     hostname: float
     ip_address_4: float
@@ -39,6 +40,7 @@ class System(BaseModel):
     active_user_id: Optional[float] = None
     active_user_name: Optional[str] = None
     boot_time: float
+    camera_usage: Optional[list[str]] = None
     fqdn: str
     hostname: str
     ip_address_4: str
