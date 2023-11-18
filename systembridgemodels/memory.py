@@ -3,8 +3,6 @@
 
 from __future__ import annotations
 
-from typing import Optional
-
 from pydantic import BaseModel, Extra, Field
 
 
@@ -13,17 +11,17 @@ class LastUpdated(BaseModel):
     Last updated
     """
 
-    swap_total: Optional[float] = None
-    swap_used: Optional[float] = None
-    swap_free: Optional[float] = None
-    swap_percent: Optional[float] = None
-    swap_sin: Optional[float] = None
-    swap_sout: Optional[float] = None
-    virtual_total: Optional[float] = None
-    virtual_available: Optional[float] = None
-    virtual_percent: Optional[float] = None
-    virtual_used: Optional[float] = None
-    virtual_free: Optional[float] = None
+    swap_total: float | None = None
+    swap_used: float | None = None
+    swap_free: float | None = None
+    swap_percent: float | None = None
+    swap_sin: float | None = None
+    swap_sout: float | None = None
+    virtual_total: float | None = None
+    virtual_available: float | None = None
+    virtual_percent: float | None = None
+    virtual_used: float | None = None
+    virtual_free: float | None = None
 
 
 class Memory(BaseModel):
@@ -34,16 +32,16 @@ class Memory(BaseModel):
     class Config:
         extra = Extra.allow
 
-    id: Optional[str] = Field(None, description="Event ID")
-    swap_total: Optional[int] = None
-    swap_used: Optional[int] = None
-    swap_free: Optional[float] = None
-    swap_percent: Optional[float] = None
-    swap_sin: Optional[int] = None
-    swap_sout: Optional[int] = None
-    virtual_total: Optional[int] = None
-    virtual_available: Optional[int] = None
-    virtual_percent: Optional[float] = None
-    virtual_used: Optional[int] = None
-    virtual_free: Optional[int] = None
-    last_updated: Optional[LastUpdated] = Field(None, description="Last updated")
+    id: str | None = Field(None, description="Event ID")
+    swap_total: int | None = None
+    swap_used: int | None = None
+    swap_free: float | None = None
+    swap_percent: float | None = None
+    swap_sin: int | None = None
+    swap_sout: int | None = None
+    virtual_total: int | None = None
+    virtual_available: int | None = None
+    virtual_percent: float | None = None
+    virtual_used: int | None = None
+    virtual_free: int | None = None
+    last_updated: LastUpdated | None = Field(None, description="Last updated")

@@ -3,8 +3,6 @@
 
 from __future__ import annotations
 
-from typing import Optional
-
 from pydantic import BaseModel
 
 
@@ -23,7 +21,7 @@ class File(BaseModel):
     is_directory: bool
     is_file: bool
     is_link: bool
-    mime_type: Optional[str] = None
+    mime_type: str | None = None
 
 
 class MediaFiles(BaseModel):

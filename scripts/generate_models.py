@@ -70,8 +70,6 @@ for root, _, files in os.walk(path_from_schemas):
                 sys.executable,
                 "-m",
                 "black",
-                "-t",
-                "py39",
                 path_to,
             ]
 

@@ -3,7 +3,7 @@
 
 from __future__ import annotations
 
-from typing import Any, Optional
+from typing import Any
 
 from pydantic import BaseModel
 
@@ -14,5 +14,5 @@ class Action(BaseModel):
     """
 
     command: str
-    data: Optional[dict[str, Any]] = None
-    label: Optional[str] = None
+    data: dict[str, Any] | None = None
+    label: str | None = None

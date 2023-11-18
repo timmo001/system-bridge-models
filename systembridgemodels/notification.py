@@ -3,7 +3,7 @@
 
 from __future__ import annotations
 
-from typing import Any, Optional
+from typing import Any
 
 from pydantic import BaseModel, confloat
 
@@ -14,13 +14,13 @@ class Action(BaseModel):
     """
 
     command: str
-    data: Optional[dict[str, Any]] = None
+    data: dict[str, Any] | None = None
     label: str
 
 
 class Audio(BaseModel):
     source: str
-    volume: Optional[confloat(ge=0.0, le=100.0)] = None
+    volume: confloat(ge=0.0, le=100.0) | None = None
 
 
 class Notification(BaseModel):
@@ -29,9 +29,9 @@ class Notification(BaseModel):
     """
 
     title: str
-    message: Optional[str] = None
-    icon: Optional[str] = None
-    image: Optional[str] = None
-    actions: Optional[list[Action]] = None
-    timeout: Optional[float] = None
-    audio: Optional[Audio] = None
+    message: str | None = None
+    icon: str | None = None
+    image: str | None = None
+    actions: list[Action] | None = None
+    timeout: float | None = None
+    audio: Audio | None = None

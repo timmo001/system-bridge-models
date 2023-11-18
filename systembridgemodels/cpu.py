@@ -3,8 +3,6 @@
 
 from __future__ import annotations
 
-from typing import Optional
-
 from pydantic import BaseModel, Extra, Field
 
 
@@ -13,29 +11,29 @@ class LastUpdated(BaseModel):
     Last updated
     """
 
-    count: Optional[float] = None
-    frequency_current: Optional[float] = None
-    frequency_min: Optional[float] = None
-    frequency_max: Optional[float] = None
-    load_average: Optional[float] = None
-    power_package: Optional[float] = None
-    stats_ctx_switches: Optional[float] = None
-    stats_interrupts: Optional[float] = None
-    stats_soft_interrupts: Optional[float] = None
-    stats_syscalls: Optional[float] = None
-    temperature: Optional[float] = None
-    times_user: Optional[float] = None
-    times_system: Optional[float] = None
-    times_idle: Optional[float] = None
-    times_interrupt: Optional[float] = None
-    times_dpc: Optional[float] = None
-    times_percent_user: Optional[float] = None
-    times_percent_system: Optional[float] = None
-    times_percent_idle: Optional[float] = None
-    times_percent_interrupt: Optional[float] = None
-    times_percent_dpc: Optional[float] = None
-    usage: Optional[float] = None
-    voltage: Optional[float] = None
+    count: float | None = None
+    frequency_current: float | None = None
+    frequency_min: float | None = None
+    frequency_max: float | None = None
+    load_average: float | None = None
+    power_package: float | None = None
+    stats_ctx_switches: float | None = None
+    stats_interrupts: float | None = None
+    stats_soft_interrupts: float | None = None
+    stats_syscalls: float | None = None
+    temperature: float | None = None
+    times_user: float | None = None
+    times_system: float | None = None
+    times_idle: float | None = None
+    times_interrupt: float | None = None
+    times_dpc: float | None = None
+    times_percent_user: float | None = None
+    times_percent_system: float | None = None
+    times_percent_idle: float | None = None
+    times_percent_interrupt: float | None = None
+    times_percent_dpc: float | None = None
+    usage: float | None = None
+    voltage: float | None = None
 
 
 class Cpu(BaseModel):
@@ -46,28 +44,28 @@ class Cpu(BaseModel):
     class Config:
         extra = Extra.allow
 
-    id: Optional[str] = Field(None, description="Event ID")
-    count: Optional[int] = None
-    frequency_current: Optional[float] = None
-    frequency_min: Optional[float] = None
-    frequency_max: Optional[float] = None
-    load_average: Optional[float] = None
-    power_package: Optional[float] = None
-    stats_ctx_switches: Optional[int] = None
-    stats_interrupts: Optional[int] = None
-    stats_soft_interrupts: Optional[int] = None
-    stats_syscalls: Optional[int] = None
-    temperature: Optional[float] = None
-    times_user: Optional[float] = None
-    times_system: Optional[float] = None
-    times_idle: Optional[float] = None
-    times_interrupt: Optional[float] = None
-    times_dpc: Optional[float] = None
-    times_percent_user: Optional[float] = None
-    times_percent_system: Optional[float] = None
-    times_percent_idle: Optional[float] = None
-    times_percent_interrupt: Optional[float] = None
-    times_percent_dpc: Optional[float] = None
-    usage: Optional[float] = None
-    voltage: Optional[float] = None
-    last_updated: Optional[LastUpdated] = Field(None, description="Last updated")
+    id: str | None = Field(None, description="Event ID")
+    count: int | None = None
+    frequency_current: float | None = None
+    frequency_min: float | None = None
+    frequency_max: float | None = None
+    load_average: float | None = None
+    power_package: float | None = None
+    stats_ctx_switches: int | None = None
+    stats_interrupts: int | None = None
+    stats_soft_interrupts: int | None = None
+    stats_syscalls: int | None = None
+    temperature: float | None = None
+    times_user: float | None = None
+    times_system: float | None = None
+    times_idle: float | None = None
+    times_interrupt: float | None = None
+    times_dpc: float | None = None
+    times_percent_user: float | None = None
+    times_percent_system: float | None = None
+    times_percent_idle: float | None = None
+    times_percent_interrupt: float | None = None
+    times_percent_dpc: float | None = None
+    usage: float | None = None
+    voltage: float | None = None
+    last_updated: LastUpdated | None = Field(None, description="Last updated")

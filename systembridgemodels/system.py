@@ -3,8 +3,6 @@
 
 from __future__ import annotations
 
-from typing import Optional
-
 from pydantic import BaseModel, Field
 
 
@@ -13,22 +11,22 @@ class LastUpdated(BaseModel):
     Last updated
     """
 
-    active_user_id: Optional[float] = None
-    active_user_name: Optional[float] = None
+    active_user_id: float | None = None
+    active_user_name: float | None = None
     boot_time: float
-    camera_usage: Optional[float] = None
+    camera_usage: float | None = None
     fqdn: float
     hostname: float
     ip_address_4: float
     mac_address: float
-    pending_reboot: Optional[float] = None
+    pending_reboot: float | None = None
     platform: float
     platform_version: float
     uptime: float
     uuid: float
     version: float
-    version_latest: Optional[float] = None
-    version_newer_available: Optional[float] = None
+    version_latest: float | None = None
+    version_newer_available: float | None = None
 
 
 class System(BaseModel):
@@ -36,21 +34,21 @@ class System(BaseModel):
     System
     """
 
-    id: Optional[str] = Field(None, description="Event ID")
-    active_user_id: Optional[float] = None
-    active_user_name: Optional[str] = None
+    id: str | None = Field(None, description="Event ID")
+    active_user_id: float | None = None
+    active_user_name: str | None = None
     boot_time: float
-    camera_usage: Optional[list[str]] = None
+    camera_usage: list[str] | None = None
     fqdn: str
     hostname: str
     ip_address_4: str
     mac_address: str
-    pending_reboot: Optional[bool] = None
+    pending_reboot: bool | None = None
     platform: str
     platform_version: str
     uptime: float
     uuid: str
     version: str
-    version_latest: Optional[str] = None
-    version_newer_available: Optional[bool] = None
-    last_updated: Optional[LastUpdated] = Field(None, description="Last updated")
+    version_latest: str | None = None
+    version_newer_available: bool | None = None
+    last_updated: LastUpdated | None = Field(None, description="Last updated")
