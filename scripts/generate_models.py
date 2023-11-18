@@ -12,6 +12,8 @@ command = [
     "install",
     "--upgrade",
     "datamodel-code-generator",
+    "pyupgrade",
+    "isort",
     "black",
 ]
 print(" ".join(command))
@@ -59,6 +61,34 @@ for root, _, files in os.walk(path_from_schemas):
                 "--snake-case-field",
                 "--use-schema-description",
                 "--use-standard-collections",
+            ]
+
+            print(" ".join(command))
+
+            with subprocess.Popen(command) as process:
+                process.wait()
+
+            command = [
+                "pyupgrade",
+                path_to,
+            ]
+
+            print(" ".join(command))
+
+            with subprocess.Popen(command) as process:
+                process.wait()
+
+            command = [
+                "isort",
+                "--rm",
+                "from typing import Dict",
+                "--rm",
+                "from typing import List",
+                "--rm",
+                "from typing import Optional",
+                "--rm",
+                "from typing import Union",
+                path_to,
             ]
 
             print(" ".join(command))
