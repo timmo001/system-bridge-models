@@ -3,8 +3,6 @@
 
 from __future__ import annotations
 
-from typing import Optional
-
 from pydantic import BaseModel
 
 
@@ -13,10 +11,10 @@ class MediaPlay(BaseModel):
     Media Play
     """
 
-    album: Optional[str] = None
-    artist: Optional[str] = None
-    autoplay: Optional[bool] = False
-    cover: Optional[str] = None
-    title: Optional[str] = None
+    album: str | None = None
+    artist: str | None = None
+    autoplay: bool | None = False
+    cover: str | None = None
+    title: str | None = None
     url: str
-    volume: Optional[float] = 40
+    volume: float | None = 40

@@ -3,8 +3,6 @@
 
 from __future__ import annotations
 
-from typing import Optional
-
 from pydantic import BaseModel, Extra, Field
 
 
@@ -13,8 +11,8 @@ class LastUpdated(BaseModel):
     Last updated
     """
 
-    is_charging: Optional[float] = None
-    percentage: Optional[float] = None
+    is_charging: float | None = None
+    percentage: float | None = None
 
 
 class Battery(BaseModel):
@@ -25,7 +23,7 @@ class Battery(BaseModel):
     class Config:
         extra = Extra.allow
 
-    id: Optional[str] = Field(None, description="Event ID")
-    is_charging: Optional[bool] = None
-    percentage: Optional[float] = None
-    last_updated: Optional[LastUpdated] = Field(None, description="Last updated")
+    id: str | None = Field(None, description="Event ID")
+    is_charging: bool | None = None
+    percentage: float | None = None
+    last_updated: LastUpdated | None = Field(None, description="Last updated")

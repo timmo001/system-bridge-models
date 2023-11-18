@@ -3,8 +3,6 @@
 
 from __future__ import annotations
 
-from typing import Optional
-
 from pydantic import BaseModel, Extra, Field
 
 
@@ -18,13 +16,13 @@ class Process(BaseModel):
 
     id: float = Field(..., description="ID")
     name: str = Field(..., description="Name")
-    cpu_usage: Optional[float] = Field(None, description="CPU usage percentage")
-    created: Optional[float] = Field(None, description="Created time (epoch)")
-    memory_usage: Optional[float] = Field(None, description="Memory usage percentage")
-    path: Optional[str] = Field(None, description="Path")
-    status: Optional[str] = Field(None, description="Status")
-    username: Optional[str] = Field(None, description="Username")
-    working_directory: Optional[str] = Field(None, description="Working directory")
+    cpu_usage: float | None = Field(None, description="CPU usage percentage")
+    created: float | None = Field(None, description="Created time (epoch)")
+    memory_usage: float | None = Field(None, description="Memory usage percentage")
+    path: str | None = Field(None, description="Path")
+    status: str | None = Field(None, description="Status")
+    username: str | None = Field(None, description="Username")
+    working_directory: str | None = Field(None, description="Working directory")
 
 
 class LastUpdated(BaseModel):
@@ -41,7 +39,7 @@ class Processes(BaseModel):
     Processes
     """
 
-    id: Optional[str] = Field(None, description="Event ID")
+    id: str | None = Field(None, description="Event ID")
     count: float
     processes: list[Process] = Field(..., description="Processes")
-    last_updated: Optional[LastUpdated] = Field(None, description="Last updated")
+    last_updated: LastUpdated | None = Field(None, description="Last updated")

@@ -3,8 +3,6 @@
 
 from __future__ import annotations
 
-from typing import Optional
-
 from pydantic import BaseModel, Extra, Field
 
 
@@ -13,14 +11,14 @@ class LastUpdated(BaseModel):
     Last updated
     """
 
-    io_counters_bytes_sent: Optional[float] = None
-    io_counters_bytes_recv: Optional[float] = None
-    io_counters_packets_sent: Optional[float] = None
-    io_counters_packets_recv: Optional[float] = None
-    io_counters_errin: Optional[float] = None
-    io_counters_errout: Optional[float] = None
-    io_counters_dropin: Optional[float] = None
-    io_counters_dropout: Optional[float] = None
+    io_counters_bytes_sent: float | None = None
+    io_counters_bytes_recv: float | None = None
+    io_counters_packets_sent: float | None = None
+    io_counters_packets_recv: float | None = None
+    io_counters_errin: float | None = None
+    io_counters_errout: float | None = None
+    io_counters_dropin: float | None = None
+    io_counters_dropout: float | None = None
 
 
 class Network(BaseModel):
@@ -31,13 +29,13 @@ class Network(BaseModel):
     class Config:
         extra = Extra.allow
 
-    id: Optional[str] = Field(None, description="Event ID")
-    io_counters_bytes_sent: Optional[int] = None
-    io_counters_bytes_recv: Optional[int] = None
-    io_counters_packets_sent: Optional[int] = None
-    io_counters_packets_recv: Optional[int] = None
-    io_counters_errin: Optional[int] = None
-    io_counters_errout: Optional[int] = None
-    io_counters_dropin: Optional[int] = None
-    io_counters_dropout: Optional[int] = None
-    last_updated: Optional[LastUpdated] = Field(None, description="Last updated")
+    id: str | None = Field(None, description="Event ID")
+    io_counters_bytes_sent: int | None = None
+    io_counters_bytes_recv: int | None = None
+    io_counters_packets_sent: int | None = None
+    io_counters_packets_recv: int | None = None
+    io_counters_errin: int | None = None
+    io_counters_errout: int | None = None
+    io_counters_dropin: int | None = None
+    io_counters_dropout: int | None = None
+    last_updated: LastUpdated | None = Field(None, description="Last updated")

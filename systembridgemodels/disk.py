@@ -3,8 +3,6 @@
 
 from __future__ import annotations
 
-from typing import Optional
-
 from pydantic import BaseModel, Extra, Field
 
 
@@ -14,12 +12,12 @@ class LastUpdated(BaseModel):
     """
 
     devices: float
-    io_counters_read_count: Optional[float] = None
-    io_counters_write_count: Optional[float] = None
-    io_counters_read_bytes: Optional[float] = None
-    io_counters_write_bytes: Optional[float] = None
-    io_counters_read_time: Optional[float] = None
-    io_counters_write_time: Optional[float] = None
+    io_counters_read_count: float | None = None
+    io_counters_write_count: float | None = None
+    io_counters_read_bytes: float | None = None
+    io_counters_write_bytes: float | None = None
+    io_counters_read_time: float | None = None
+    io_counters_write_time: float | None = None
     partitions: float
 
 
@@ -31,13 +29,13 @@ class Disk(BaseModel):
     class Config:
         extra = Extra.allow
 
-    id: Optional[str] = Field(None, description="Event ID")
+    id: str | None = Field(None, description="Event ID")
     devices: list
-    io_counters_read_count: Optional[int] = None
-    io_counters_write_count: Optional[int] = None
-    io_counters_read_bytes: Optional[int] = None
-    io_counters_write_bytes: Optional[int] = None
-    io_counters_read_time: Optional[int] = None
-    io_counters_write_time: Optional[int] = None
+    io_counters_read_count: int | None = None
+    io_counters_write_count: int | None = None
+    io_counters_read_bytes: int | None = None
+    io_counters_write_bytes: int | None = None
+    io_counters_read_time: int | None = None
+    io_counters_write_time: int | None = None
     partitions: list
-    last_updated: Optional[LastUpdated] = Field(None, description="Last updated")
+    last_updated: LastUpdated | None = Field(None, description="Last updated")
