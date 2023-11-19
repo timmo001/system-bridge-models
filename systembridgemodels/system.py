@@ -9,10 +9,12 @@ class SystemUser:
     """System User"""
 
     name: str
+    active: bool
     terminal: str
     host: str
     started: float
     pid: float
+
 
 @dataclass
 class System:
@@ -29,10 +31,8 @@ class System:
     users: list[SystemUser]
     uuid: str
     version: str
-    active_user_id: float | None = None
-    active_user_name: str | None = None
     camera_usage: list[str] | None = None
-    ip_address_6: str|None = None
+    ip_address_6: str | None = None
     pending_reboot: bool | None = None
     version_latest: str | None = None
     version_newer_available: bool | None = None
