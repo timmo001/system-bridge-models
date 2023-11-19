@@ -2,15 +2,16 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+from typing import Any
 
 from .battery import Battery
 from .cpu import Cpu
 from .disk import Disk
 from .display import Display
-from .gpu import Gpu
+from .media import Media
 from .memory import Memory
 from .network import Network
-from .sensors import Sensors
+from .processes import Processes
 from .system import System
 
 
@@ -22,8 +23,10 @@ class Data:
     cpu: Cpu
     disk: Disk
     display: Display
-    gpu: Gpu
+    gpu: dict[str, Any]
+    media: Media
     memory: Memory
     network: Network
-    sensors: Sensors
+    processes: Processes
+    sensors: dict[str, Any]
     system: System

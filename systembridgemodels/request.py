@@ -8,6 +8,7 @@ from dataclasses import dataclass, field
 class Request:
     """Request"""
 
+    api_key: str = field(repr=False)
+    id: str
     event: str
-    api_key: str | None = field(default=None, repr=False)
-    id: str | None = None
+    data: dict[str, Any]
