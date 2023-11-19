@@ -47,8 +47,8 @@ class DiskDevice:
     """Disk Device"""
 
     name: str
-    io_counters: DiskIOCounters|None = None
     partitions: list[DiskPartition]
+    io_counters: DiskIOCounters | None = None
 
 
 @dataclass
