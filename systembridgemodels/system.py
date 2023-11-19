@@ -5,6 +5,16 @@ from dataclasses import dataclass
 
 
 @dataclass
+class SystemUser:
+    """System User"""
+
+    name: str
+    terminal: str
+    host: str
+    started: float
+    pid: float
+
+@dataclass
 class System:
     """System"""
 
@@ -13,14 +23,16 @@ class System:
     hostname: str
     ip_address_4: str
     mac_address: str
-    platform: str
     platform_version: str
+    platform: str
     uptime: float
+    users: list[SystemUser]
     uuid: str
     version: str
     active_user_id: float | None = None
     active_user_name: str | None = None
     camera_usage: list[str] | None = None
+    ip_address_6: str|None = None
     pending_reboot: bool | None = None
     version_latest: str | None = None
     version_newer_available: bool | None = None
