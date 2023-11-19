@@ -4,7 +4,7 @@ from __future__ import annotations
 from typing import Any
 
 from .battery import Battery
-from .cpu import Cpu
+from .cpu import CPU
 from .data import Data
 from .disk import Disk
 from .display import Display
@@ -47,7 +47,7 @@ MODEL_SYSTEM = "system"
 
 MODEL_MAP = {
     MODEL_BATTERY: Battery,
-    MODEL_CPU: Cpu,
+    MODEL_CPU: CPU,
     MODEL_DATA: Data,
     MODEL_DISK: Disk,
     MODEL_DISPLAY: Display,
