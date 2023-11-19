@@ -14,9 +14,6 @@ class DiskIOCounters:
     write_bytes: int
     read_time: int
     write_time: int
-    busy_time: int | None = None
-    read_merged_count: int | None = None
-    write_merged_count: int | None = None
 
 
 @dataclass
@@ -35,7 +32,7 @@ class DiskPartition:
 
     device: str
     mount_point: str
-    fs_type: str
+    filesystem_type: str
     options: str
     max_file_size: int
     max_path_length: int
@@ -56,4 +53,4 @@ class Disk:
     """Disk"""
 
     devices: list[DiskDevice]
-    io_counters: DiskIOCounters
+    io_counters: DiskIOCounters | None = None
