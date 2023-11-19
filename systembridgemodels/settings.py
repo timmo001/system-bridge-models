@@ -19,6 +19,15 @@ class SettingsAPI:
 
 
 @dataclass
+class SettingHotkey:
+    """Setting Hotkey"""
+
+    name: str
+    key: str
+    modifiers: list[str] = field(default=[])
+
+
+@dataclass
 class SettingsMedia:
     """Settings Media"""
 
@@ -31,6 +40,6 @@ class Settings:
 
     api: SettingsAPI = field(default_factory=SettingsAPI)
     autostart: bool = field(default=False)
-    keyboard_hotkeys: list[str] = field(default=[])
+    keyboard_hotkeys: list[SettingHotkey] = field(default=[])
     log_level: str = field(default="INFO")
     media: SettingsMedia = field(default_factory=SettingsMedia)
