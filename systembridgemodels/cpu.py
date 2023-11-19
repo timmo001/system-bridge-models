@@ -5,7 +5,7 @@ from dataclasses import dataclass
 
 
 @dataclass
-class Cpu:
+class CPU:
     """CPU"""
 
     count: int | None = None
