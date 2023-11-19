@@ -11,14 +11,6 @@ def generate_token() -> str:
 
 
 @dataclass
-class SettingsAPI:
-    """Settings API"""
-
-    token: str = field(default_factory=generate_token)
-    port: int = field(default=274343)  # T9 dialer for "bridge"
-
-
-@dataclass
 class SettingHotkey:
     """Setting Hotkey"""
 
@@ -27,10 +19,26 @@ class SettingHotkey:
 
 
 @dataclass
+class SettingDirectory:
+    """Setting Directory"""
+
+    name: str
+    path: str
+
+
+@dataclass
+class SettingsAPI:
+    """Settings API"""
+
+    token: str = field(default_factory=generate_token)
+    port: int = field(default=274343)  # T9 dialer for "bridge"
+
+
+@dataclass
 class SettingsMedia:
     """Settings Media"""
 
-    directories: list[str] = field(default_factory=lambda: [])
+    directories: list[SettingDirectory] = field(default_factory=lambda: [])
 
 
 @dataclass
