@@ -1,8 +1,7 @@
-# Data
-
+"""Data"""
 from __future__ import annotations
 
-from pydantic import BaseModel, Extra, Field
+from dataclasses import dataclass
 
 from .battery import Battery
 from .cpu import Cpu
@@ -15,22 +14,16 @@ from .sensors import Sensors
 from .system import System
 
 
-class Data(BaseModel):
+@dataclass
+class Data:
     """Data"""
 
-    battery: Battery = Field(..., alias="battery")
-    cpu: Cpu = Field(..., alias="cpu")
-    disk: Disk = Field(..., alias="disk")
-    display: Display = Field(..., alias="display")
-    gpu: Gpu = Field(..., alias="gpu")
-    memory: Memory = Field(..., alias="memory")
-    network: Network = Field(..., alias="network")
-    sensors: Sensors = Field(..., alias="sensors")
-    system: System = Field(..., alias="system")
-
-
-class DataDict(BaseModel):
-    class Config:
-        extra = Extra.allow
-
-    last_updated: dict[str, float | None] = Field(..., description="Last updated")
+    battery: Battery
+    cpu: Cpu
+    disk: Disk
+    display: Display
+    gpu: Gpu
+    memory: Memory
+    network: Network
+    sensors: Sensors
+    system: System

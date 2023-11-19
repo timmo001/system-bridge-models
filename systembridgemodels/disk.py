@@ -3,39 +3,38 @@
 
 from __future__ import annotations
 
-from pydantic import BaseModel, Extra, Field
+from dataclasses import dataclass
 
 
-class LastUpdated(BaseModel):
+@dataclass
+class LastUpdated:
     """
     Last updated
     """
 
     devices: float
+    partitions: float
     io_counters_read_count: float | None = None
     io_counters_write_count: float | None = None
     io_counters_read_bytes: float | None = None
     io_counters_write_bytes: float | None = None
     io_counters_read_time: float | None = None
     io_counters_write_time: float | None = None
-    partitions: float
 
 
-class Disk(BaseModel):
+@dataclass
+class Disk:
     """
     Disk
     """
 
-    class Config:
-        extra = Extra.allow
-
-    id: str | None = Field(None, description="Event ID")
     devices: list
+    partitions: list
+    id: str | None = None
     io_counters_read_count: int | None = None
     io_counters_write_count: int | None = None
     io_counters_read_bytes: int | None = None
     io_counters_write_bytes: int | None = None
     io_counters_read_time: int | None = None
     io_counters_write_time: int | None = None
-    partitions: list
-    last_updated: LastUpdated | None = Field(None, description="Last updated")
+    last_updated: LastUpdated | None = None

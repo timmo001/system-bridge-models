@@ -3,8 +3,8 @@ import os
 import subprocess
 import sys
 
-# Install datamodel-code-generator and black
-print("Updating datamodel-code-generator and black..")
+# Install datamodel-code-generator, pyupgrade, isort and black
+print("Updating datamodel-code-generator, pyupgrade, isort and black..")
 command = [
     sys.executable,
     "-m",
@@ -58,6 +58,8 @@ for root, _, files in os.walk(path_from_schemas):
                 "jsonschema",
                 "--output",
                 path_to,
+                "--output-model-type",
+                "dataclasses.dataclass",
                 "--snake-case-field",
                 "--use-schema-description",
                 "--use-standard-collections",

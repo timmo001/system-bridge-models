@@ -3,10 +3,11 @@
 
 from __future__ import annotations
 
-from pydantic import BaseModel, Extra, Field
+from dataclasses import dataclass
 
 
-class LastUpdated(BaseModel):
+@dataclass
+class LastUpdated:
     """
     Last updated
     """
@@ -36,15 +37,13 @@ class LastUpdated(BaseModel):
     voltage: float | None = None
 
 
-class Cpu(BaseModel):
+@dataclass
+class Cpu:
     """
     CPU
     """
 
-    class Config:
-        extra = Extra.allow
-
-    id: str | None = Field(None, description="Event ID")
+    id: str | None = None
     count: int | None = None
     frequency_current: float | None = None
     frequency_min: float | None = None
@@ -68,4 +67,4 @@ class Cpu(BaseModel):
     times_percent_dpc: float | None = None
     usage: float | None = None
     voltage: float | None = None
-    last_updated: LastUpdated | None = Field(None, description="Last updated")
+    last_updated: LastUpdated | None = None

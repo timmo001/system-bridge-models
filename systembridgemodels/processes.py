@@ -3,29 +3,28 @@
 
 from __future__ import annotations
 
-from pydantic import BaseModel, Extra, Field
+from dataclasses import dataclass
 
 
-class Process(BaseModel):
+@dataclass
+class Process:
     """
     Process
     """
 
-    class Config:
-        extra = Extra.allow
-
-    id: float = Field(..., description="ID")
-    name: str = Field(..., description="Name")
-    cpu_usage: float | None = Field(None, description="CPU usage percentage")
-    created: float | None = Field(None, description="Created time (epoch)")
-    memory_usage: float | None = Field(None, description="Memory usage percentage")
-    path: str | None = Field(None, description="Path")
-    status: str | None = Field(None, description="Status")
-    username: str | None = Field(None, description="Username")
-    working_directory: str | None = Field(None, description="Working directory")
+    id: float
+    name: str
+    cpu_usage: float | None = None
+    created: float | None = None
+    memory_usage: float | None = None
+    path: str | None = None
+    status: str | None = None
+    username: str | None = None
+    working_directory: str | None = None
 
 
-class LastUpdated(BaseModel):
+@dataclass
+class LastUpdated:
     """
     Last updated
     """
@@ -34,12 +33,13 @@ class LastUpdated(BaseModel):
     processes: float
 
 
-class Processes(BaseModel):
+@dataclass
+class Processes:
     """
     Processes
     """
 
-    id: str | None = Field(None, description="Event ID")
     count: float
-    processes: list[Process] = Field(..., description="Processes")
-    last_updated: LastUpdated | None = Field(None, description="Last updated")
+    processes: list[Process]
+    id: str | None = None
+    last_updated: LastUpdated | None = None

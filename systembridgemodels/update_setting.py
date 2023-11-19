@@ -3,12 +3,12 @@
 
 from __future__ import annotations
 
+from dataclasses import dataclass
 from typing import Any
 
-from pydantic import BaseModel
 
-
-class UpdateSetting(BaseModel):
+@dataclass
+class UpdateSetting:
     """
     Update Setting
     """

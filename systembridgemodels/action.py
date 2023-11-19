@@ -3,12 +3,12 @@
 
 from __future__ import annotations
 
+from dataclasses import dataclass
 from typing import Any
 
-from pydantic import BaseModel
 
-
-class Action(BaseModel):
+@dataclass
+class Action:
     """
     Action
     """

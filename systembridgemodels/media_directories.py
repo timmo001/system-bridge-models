@@ -3,13 +3,15 @@
 
 from __future__ import annotations
 
-from pydantic import BaseModel
+from dataclasses import dataclass
 
 
-class Directory(BaseModel):
+@dataclass
+class Directory:
     key: str
     path: str
 
 
-class MediaDirectories(BaseModel):
+@dataclass
+class MediaDirectories:
     directories: list[Directory]

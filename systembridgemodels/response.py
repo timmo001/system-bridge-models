@@ -3,22 +3,19 @@
 
 from __future__ import annotations
 
+from dataclasses import dataclass
 from typing import Any
 
-from pydantic import BaseModel, Extra, Field
 
-
-class Response(BaseModel):
+@dataclass
+class Response:
     """
     Response
     """
 
-    class Config:
-        extra = Extra.allow
-
-    id: str | None = Field(None, description="Message ID")
-    type: str = Field(..., description="Type")
-    subtype: str | None = Field(None, description="Subtype")
-    message: str | None = Field(None, description="Message")
-    module: str | None = Field(None, description="Module")
-    data: Any | None = Field(None, description="Data")
+    type: str
+    id: str | None = None
+    subtype: str | None = None
+    message: str | None = None
+    module: str | None = None
+    data: Any | None = None

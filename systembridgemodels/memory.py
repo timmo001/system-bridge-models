@@ -3,10 +3,11 @@
 
 from __future__ import annotations
 
-from pydantic import BaseModel, Extra, Field
+from dataclasses import dataclass
 
 
-class LastUpdated(BaseModel):
+@dataclass
+class LastUpdated:
     """
     Last updated
     """
@@ -24,15 +25,13 @@ class LastUpdated(BaseModel):
     virtual_free: float | None = None
 
 
-class Memory(BaseModel):
+@dataclass
+class Memory:
     """
     Memory
     """
 
-    class Config:
-        extra = Extra.allow
-
-    id: str | None = Field(None, description="Event ID")
+    id: str | None = None
     swap_total: int | None = None
     swap_used: int | None = None
     swap_free: float | None = None
@@ -44,4 +43,4 @@ class Memory(BaseModel):
     virtual_percent: float | None = None
     virtual_used: int | None = None
     virtual_free: int | None = None
-    last_updated: LastUpdated | None = Field(None, description="Last updated")
+    last_updated: LastUpdated | None = None

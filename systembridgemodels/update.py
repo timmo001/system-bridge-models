@@ -3,10 +3,11 @@
 
 from __future__ import annotations
 
-from pydantic import BaseModel
+from dataclasses import dataclass
 
 
-class Update(BaseModel):
+@dataclass
+class Update:
     """
     Version
     """

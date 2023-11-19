@@ -3,16 +3,14 @@
 
 from __future__ import annotations
 
-from pydantic import BaseModel, Extra
+from dataclasses import dataclass
 
 
-class Media(BaseModel):
+@dataclass
+class Media:
     """
     Media Info
     """
-
-    class Config:
-        extra = Extra.allow
 
     album_artist: str | None = None
     album_title: str | None = None

@@ -3,10 +3,11 @@
 
 from __future__ import annotations
 
-from pydantic import BaseModel
+from dataclasses import dataclass
 
 
-class File(BaseModel):
+@dataclass
+class File:
     """
     Media File
     """
@@ -24,7 +25,8 @@ class File(BaseModel):
     mime_type: str | None = None
 
 
-class MediaFiles(BaseModel):
+@dataclass
+class MediaFiles:
     """
     Media Files
     """

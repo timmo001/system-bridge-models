@@ -3,10 +3,11 @@
 
 from __future__ import annotations
 
-from pydantic import BaseModel
+from dataclasses import dataclass
 
 
-class MediaGetFile(BaseModel):
+@dataclass
+class MediaGetFile:
     """
     Get File
     """

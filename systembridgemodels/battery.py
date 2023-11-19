@@ -3,10 +3,11 @@
 
 from __future__ import annotations
 
-from pydantic import BaseModel, Extra, Field
+from dataclasses import dataclass
 
 
-class LastUpdated(BaseModel):
+@dataclass
+class LastUpdated:
     """
     Last updated
     """
@@ -15,15 +16,13 @@ class LastUpdated(BaseModel):
     percentage: float | None = None
 
 
-class Battery(BaseModel):
+@dataclass
+class Battery:
     """
     Battery
     """
 
-    class Config:
-        extra = Extra.allow
-
-    id: str | None = Field(None, description="Event ID")
+    id: str | None = None
     is_charging: bool | None = None
     percentage: float | None = None
-    last_updated: LastUpdated | None = Field(None, description="Last updated")
+    last_updated: LastUpdated | None = None

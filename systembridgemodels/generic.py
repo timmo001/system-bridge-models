@@ -1,16 +1,12 @@
-# Generic
+"""Generic"""
 
 from __future__ import annotations
 
-from pydantic import BaseModel, Extra, Field
+from dataclasses import dataclass
 
 
-class Generic(BaseModel):
-    """
-    Generic
-    """
+@dataclass
+class Generic:
+    """Generic"""
 
-    class Config:
-        extra = Extra.allow
-
-    last_updated: dict[str, float] = Field(..., description="Last updated")
+    last_updated: dict[str, float]

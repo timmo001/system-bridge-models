@@ -3,52 +3,54 @@
 
 from __future__ import annotations
 
-from pydantic import BaseModel, Field
+from dataclasses import dataclass
 
 
-class LastUpdated(BaseModel):
+@dataclass
+class LastUpdated:
     """
     Last updated
     """
 
-    active_user_id: float | None = None
-    active_user_name: float | None = None
     boot_time: float
-    camera_usage: float | None = None
     fqdn: float
     hostname: float
     ip_address_4: float
     mac_address: float
-    pending_reboot: float | None = None
     platform: float
     platform_version: float
     uptime: float
     uuid: float
     version: float
+    active_user_id: float | None = None
+    active_user_name: float | None = None
+    camera_usage: float | None = None
+    pending_reboot: float | None = None
     version_latest: float | None = None
     version_newer_available: float | None = None
 
 
-class System(BaseModel):
+@dataclass
+class System:
     """
     System
     """
 
-    id: str | None = Field(None, description="Event ID")
-    active_user_id: float | None = None
-    active_user_name: str | None = None
     boot_time: float
-    camera_usage: list[str] | None = None
     fqdn: str
     hostname: str
     ip_address_4: str
     mac_address: str
-    pending_reboot: bool | None = None
     platform: str
     platform_version: str
     uptime: float
     uuid: str
     version: str
+    id: str | None = None
+    active_user_id: float | None = None
+    active_user_name: str | None = None
+    camera_usage: list[str] | None = None
+    pending_reboot: bool | None = None
     version_latest: str | None = None
     version_newer_available: bool | None = None
-    last_updated: LastUpdated | None = Field(None, description="Last updated")
+    last_updated: LastUpdated | None = None

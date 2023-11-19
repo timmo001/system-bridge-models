@@ -3,27 +3,29 @@
 
 from __future__ import annotations
 
+from dataclasses import dataclass
 from typing import Any
 
-from pydantic import BaseModel, confloat
 
-
-class Action(BaseModel):
+@dataclass
+class Action:
     """
     Notification Action
     """
 
     command: str
-    data: dict[str, Any] | None = None
     label: str
+    data: dict[str, Any] | None = None
 
 
-class Audio(BaseModel):
+@dataclass
+class Audio:
     source: str
-    volume: confloat(ge=0.0, le=100.0) | None = None
+    volume: float | None = None
 
 
-class Notification(BaseModel):
+@dataclass
+class Notification:
     """
     Notification
     """
