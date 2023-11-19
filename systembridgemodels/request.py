@@ -8,7 +8,7 @@ from dataclasses import dataclass, field
 class Request:
     """Request"""
 
-    api_key: str = field(repr=False)
+    token: str = field(repr=False)
     id: str
     event: str
     data: dict[str, Any]
