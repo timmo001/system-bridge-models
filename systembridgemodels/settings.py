@@ -31,7 +31,7 @@ class SettingsAPI:
     """Settings API"""
 
     token: str = field(default_factory=generate_token)
-    port: int = field(default=274343)  # T9 dialer for "bridge"
+    port: int = field(default=9174)
 
 
 @dataclass
