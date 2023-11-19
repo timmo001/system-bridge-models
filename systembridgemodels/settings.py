@@ -24,14 +24,13 @@ class SettingHotkey:
 
     name: str
     key: str
-    modifiers: list[str] = field(default=[])
 
 
 @dataclass
 class SettingsMedia:
     """Settings Media"""
 
-    directories: list[str] = field(default=[])
+    directories: list[str] = field(default_factory=lambda: [])
 
 
 @dataclass
@@ -40,6 +39,6 @@ class Settings:
 
     api: SettingsAPI = field(default_factory=SettingsAPI)
     autostart: bool = field(default=False)
-    keyboard_hotkeys: list[SettingHotkey] = field(default=[])
+    keyboard_hotkeys: list[SettingHotkey] = field(default_factory=lambda: [])
     log_level: str = field(default="INFO")
     media: SettingsMedia = field(default_factory=SettingsMedia)
