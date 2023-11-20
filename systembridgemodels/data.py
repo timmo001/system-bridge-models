@@ -10,7 +10,7 @@ from .display import Display
 from .gpu import GPU
 from .media import Media
 from .memory import Memory
-from .network import Network
+from .networks import Networks
 from .processes import Processes
 from .sensors import Sensors
 from .system import System
@@ -27,7 +27,7 @@ class Data:
     gpu: list[GPU] | None = None
     media: Media | None = None
     memory: Memory | None = None
-    network: Network | None = None
+    network: Networks | None = None
     processes: Processes | None = None
     sensors: Sensors | None = None
     system: System | None = None
