@@ -1,4 +1,4 @@
-"""Disk"""
+"""Disks"""
 from __future__ import annotations
 
 from dataclasses import dataclass
@@ -49,8 +49,8 @@ class DiskDevice:
 
 
 @dataclass
-class Disk:
-    """Disk"""
+class Disks:
+    """Disks"""
 
     devices: list[DiskDevice]
     io_counters: DiskIOCounters | None = None

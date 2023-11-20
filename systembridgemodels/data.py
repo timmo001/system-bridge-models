@@ -5,9 +5,9 @@ from dataclasses import dataclass
 
 from .battery import Battery
 from .cpu import CPU
-from .disk import Disk
-from .display import Display
-from .gpu import GPU
+from .disks import Disks
+from .displays import Displays
+from .gpus import GPUs
 from .media import Media
 from .memory import Memory
 from .networks import Networks
@@ -22,9 +22,9 @@ class Data:
 
     battery: Battery | None = None
     cpu: CPU | None = None
-    disk: Disk | None = None
-    display: list[Display] | None = None
-    gpu: list[GPU] | None = None
+    disk: Disks | None = None
+    display: Displays | None = None
+    gpu: GPUs | None = None
     media: Media | None = None
     memory: Memory | None = None
     network: Networks | None = None
