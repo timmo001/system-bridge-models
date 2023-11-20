@@ -40,8 +40,8 @@ class DiskPartition:
 
 
 @dataclass
-class DiskDevice:
-    """Disk Device"""
+class Disk:
+    """Disk"""
 
     name: str
     partitions: list[DiskPartition]
@@ -52,5 +52,5 @@ class DiskDevice:
 class Disks:
     """Disks"""
 
-    devices: list[DiskDevice]
+    devices: list[Disk]
     io_counters: DiskIOCounters | None = None
