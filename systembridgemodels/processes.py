@@ -9,7 +9,7 @@ class Process:
     """Process"""
 
     id: float
-    name: str
+    name: str | None = None
     cpu_usage: float | None = None
     created: float | None = None
     memory_usage: float | None = None
@@ -19,9 +19,4 @@ class Process:
     working_directory: str | None = None
 
 
-@dataclass
-class Processes:
-    """Processes"""
-
-    count: float
-    processes: list[Process]
+type Processes = list[Process]
