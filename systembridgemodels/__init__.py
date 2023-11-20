@@ -1,1 +1,1 @@
-"""System Bridge: Models"""
+"""Models"""
