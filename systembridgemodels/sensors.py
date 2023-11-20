@@ -12,7 +12,7 @@ class SensorsWindowsSensor:
     id: str
     name: str
     type: str
-    value: float
+    value: float | int | str | None = None
 
 
 @dataclass
