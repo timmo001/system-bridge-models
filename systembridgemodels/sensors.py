@@ -38,6 +38,8 @@ class SensorsWindows:
 class Sensors:
     """Sensors"""
 
+    # TODO: Add fan model
     fans: Any | None = None
+    # TODO: Add temperatures model
     temperatures: Any | None = None
     windows_sensors: SensorsWindows | None = None
