@@ -19,7 +19,6 @@ class NetworkAddress:
 class NetworkStats:
     """Network Stats"""
 
-    addresses: list[NetworkAddress] | None = None
     isup: bool | None = None
     duplex: str | None = None
     speed: int | None = None
@@ -58,6 +57,15 @@ class NetworkIO:
 class Network:
     """Network"""
 
+    name: str | None = None
+    addresses: list[NetworkAddress] | None = None
+    stats: NetworkStats | None = None
+
+
+@dataclass
+class Networks:
+    """Networks"""
+
     connections: list[NetworkConnection] | None = None
     io: NetworkIO | None = None
-    networks: dict[str, NetworkStats] | None = None
+    networks: list[Network] | None = None
