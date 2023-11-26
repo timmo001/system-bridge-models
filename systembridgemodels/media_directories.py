@@ -13,6 +13,4 @@ class Directory:
     path: str
 
 
-@dataclass
-class MediaDirectories(list[Directory]):
-    """Media directories"""
+type MediaDirectories = list[Directory]
