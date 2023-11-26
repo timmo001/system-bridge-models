@@ -1,4 +1,4 @@
-"""Data"""
+"""Modules"""
 from __future__ import annotations
 
 from dataclasses import dataclass
@@ -46,7 +46,7 @@ class RegisterDataListener(GetData):
 
 
 @dataclass
-class Data:
+class ModulesData:
     """Data"""
 
     battery: Battery | None = None
