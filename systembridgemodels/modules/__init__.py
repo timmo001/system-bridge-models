@@ -1,4 +1,4 @@
-"""Modules"""
+"""Modules."""
 from __future__ import annotations
 
 from dataclasses import dataclass
@@ -18,7 +18,7 @@ from .system import System
 
 
 class DataEnum(Enum):
-    """Data Enum"""
+    """Data Enum."""
 
     Battery = "battery"
     CPU = "cpu"
@@ -35,19 +35,19 @@ class DataEnum(Enum):
 
 @dataclass
 class GetData:
-    """Get Data"""
+    """Get Data."""
 
-    modules: list[DataEnum]
+    modules: list[str]
 
 
 @dataclass
 class RegisterDataListener(GetData):
-    """Register Data Listener"""
+    """Register Data Listener."""
 
 
 @dataclass
 class ModulesData:
-    """Data"""
+    """Data."""
 
     battery: Battery | None = None
     cpu: CPU | None = None
