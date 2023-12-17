@@ -3,9 +3,9 @@
   "type": "object",
   "description": "Request",
   "properties": {
-    "api_key": {
+    "token": {
       "type": "string",
-      "description": "API Key"
+      "description": "Token"
     },
     "id": {
       "type": "string",
