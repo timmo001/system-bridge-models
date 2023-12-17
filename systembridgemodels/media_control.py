@@ -1,4 +1,4 @@
-"""Media Control"""
+"""Media Control."""
 from __future__ import annotations
 
 from dataclasses import dataclass
@@ -7,6 +7,8 @@ from typing import Any
 
 
 class Action(Enum):
+    """Action."""
+
     play = "PLAY"
     pause = "PAUSE"
     stop = "STOP"
@@ -24,7 +26,7 @@ class Action(Enum):
 
 @dataclass
 class MediaControl:
-    """Media Control"""
+    """Media Control."""
 
     action: Action
     value: Any | None = None

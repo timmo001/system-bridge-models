@@ -1,4 +1,4 @@
-"""System"""
+"""System."""
 from __future__ import annotations
 
 from dataclasses import dataclass
@@ -7,7 +7,7 @@ from typing import Any
 
 @dataclass
 class SensorsWindowsSensor:
-    """Sensors Windows Sensor"""
+    """Sensors Windows Sensor."""
 
     id: str
     name: str
@@ -17,7 +17,7 @@ class SensorsWindowsSensor:
 
 @dataclass
 class SensorsWindowsHardware:
-    """Sensors Windows Hardware"""
+    """Sensors Windows Hardware."""
 
     id: str
     name: str
@@ -28,7 +28,7 @@ class SensorsWindowsHardware:
 
 @dataclass
 class SensorsWindows:
-    """Sensors Windows"""
+    """Sensors Windows."""
 
     hardware: list[SensorsWindowsHardware] | None = None
     nvidia: Any | None = None
@@ -36,7 +36,7 @@ class SensorsWindows:
 
 @dataclass
 class Sensors:
-    """Sensors"""
+    """Sensors."""
 
     # TODO: Add fan model
     fans: Any | None = None

@@ -1,4 +1,4 @@
-"""Open Path"""
+"""Open Path."""
 from __future__ import annotations
 
 from dataclasses import dataclass
@@ -6,6 +6,6 @@ from dataclasses import dataclass
 
 @dataclass
 class OpenPath:
-    """Open Path"""
+    """Open Path."""
 
     path: str

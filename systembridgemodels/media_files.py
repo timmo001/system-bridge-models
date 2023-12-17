@@ -1,4 +1,4 @@
-"""Media Files"""
+"""Media Files."""
 from __future__ import annotations
 
 from dataclasses import dataclass
@@ -6,7 +6,7 @@ from dataclasses import dataclass
 
 @dataclass
 class MediaFile:
-    """Media File"""
+    """Media File."""
 
     name: str
     path: str
@@ -23,7 +23,7 @@ class MediaFile:
 
 @dataclass
 class MediaFiles:
-    """Media Files"""
+    """Media Files."""
 
     files: list[MediaFile]
     path: str

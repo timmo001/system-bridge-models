@@ -1,4 +1,4 @@
-"""GPUs"""
+"""GPUs."""
 from __future__ import annotations
 
 from dataclasses import dataclass
@@ -6,7 +6,7 @@ from dataclasses import dataclass
 
 @dataclass
 class GPU:
-    """GPU"""
+    """GPU."""
 
     name: str
     core_clock: float | None = None

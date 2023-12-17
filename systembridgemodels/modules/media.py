@@ -1,4 +1,4 @@
-"""Media"""
+"""Media."""
 from __future__ import annotations
 
 from dataclasses import dataclass
@@ -6,7 +6,7 @@ from dataclasses import dataclass
 
 @dataclass
 class Media:
-    """Media Info"""
+    """Media Info."""
 
     album_artist: str | None = None
     album_title: str | None = None

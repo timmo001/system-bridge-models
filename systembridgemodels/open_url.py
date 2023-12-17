@@ -1,4 +1,4 @@
-"""Open URL"""
+"""Open URL."""
 from __future__ import annotations
 
 from dataclasses import dataclass
@@ -6,6 +6,6 @@ from dataclasses import dataclass
 
 @dataclass
 class OpenUrl:
-    """Open URL"""
+    """Open URL."""
 
     url: str

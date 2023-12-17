@@ -1,4 +1,4 @@
-"""Displays"""
+"""Displays."""
 from __future__ import annotations
 
 from dataclasses import dataclass
@@ -6,7 +6,7 @@ from dataclasses import dataclass
 
 @dataclass
 class Display:
-    """Display"""
+    """Display."""
 
     name: str
     resolution_horizontal: int

@@ -1,4 +1,4 @@
-"""Memory"""
+"""Memory."""
 from __future__ import annotations
 
 from dataclasses import dataclass
@@ -6,7 +6,7 @@ from dataclasses import dataclass
 
 @dataclass
 class MemorySwap:
-    """Memory Swap"""
+    """Memory Swap."""
 
     total: int | None = None
     used: int | None = None
@@ -18,7 +18,7 @@ class MemorySwap:
 
 @dataclass
 class MemoryVirtual:
-    """Memory Virtual"""
+    """Memory Virtual."""
 
     total: int | None = None
     available: int | None = None
@@ -35,7 +35,7 @@ class MemoryVirtual:
 
 @dataclass
 class Memory:
-    """Memory"""
+    """Memory."""
 
     swap: MemorySwap
     virtual: MemoryVirtual

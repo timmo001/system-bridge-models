@@ -1,4 +1,4 @@
-"""CPU"""
+"""CPU."""
 from __future__ import annotations
 
 from dataclasses import dataclass
@@ -6,7 +6,7 @@ from dataclasses import dataclass
 
 @dataclass
 class CPUFrequency:
-    """CPU Frequency"""
+    """CPU Frequency."""
 
     current: float | None = None
     min: float | None = None
@@ -15,7 +15,7 @@ class CPUFrequency:
 
 @dataclass
 class CPUStats:
-    """CPU Stats"""
+    """CPU Stats."""
 
     ctx_switches: int | None = None
     interrupts: int | None = None
@@ -25,7 +25,7 @@ class CPUStats:
 
 @dataclass
 class CPUTimes:
-    """CPU Times"""
+    """CPU Times."""
 
     user: float | None = None
     system: float | None = None
@@ -36,7 +36,7 @@ class CPUTimes:
 
 @dataclass
 class CPU:
-    """CPU"""
+    """CPU."""
 
     count: int | None = None
     frequency: CPUFrequency | None = None

@@ -1,4 +1,4 @@
-"""Battery"""
+"""Battery."""
 from __future__ import annotations
 
 from dataclasses import dataclass
@@ -6,7 +6,7 @@ from dataclasses import dataclass
 
 @dataclass
 class Battery:
-    """Battery"""
+    """Battery."""
 
     is_charging: bool | None = None
     percentage: float | None = None

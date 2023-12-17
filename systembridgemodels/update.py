@@ -1,4 +1,4 @@
-"""Update"""
+"""Update."""
 from __future__ import annotations
 
 from dataclasses import dataclass
@@ -6,6 +6,6 @@ from dataclasses import dataclass
 
 @dataclass
 class Update:
-    """Update"""
+    """Update."""
 
     version: str

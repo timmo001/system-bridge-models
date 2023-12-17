@@ -1,4 +1,4 @@
-"""Media Get Files"""
+"""Media Get Files."""
 from __future__ import annotations
 
 from dataclasses import dataclass
@@ -6,7 +6,7 @@ from dataclasses import dataclass
 
 @dataclass
 class MediaGetFiles:
-    """Media Get Files"""
+    """Media Get Files."""
 
     base: str
     path: str | None = None

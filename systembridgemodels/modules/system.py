@@ -1,4 +1,4 @@
-"""System"""
+"""System."""
 from __future__ import annotations
 
 from dataclasses import dataclass
@@ -6,7 +6,7 @@ from dataclasses import dataclass
 
 @dataclass
 class SystemUser:
-    """System User"""
+    """System User."""
 
     name: str
     active: bool
@@ -18,7 +18,7 @@ class SystemUser:
 
 @dataclass
 class System:
-    """System"""
+    """System."""
 
     boot_time: float
     fqdn: str

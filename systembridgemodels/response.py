@@ -1,4 +1,4 @@
-"""Response"""
+"""Response."""
 from __future__ import annotations
 
 from dataclasses import dataclass
@@ -7,7 +7,7 @@ from typing import Any
 
 @dataclass
 class Response:
-    """Response"""
+    """Response."""
 
     id: str
     type: str

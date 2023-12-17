@@ -20,17 +20,17 @@ from .system import System
 class DataEnum(Enum):
     """Data Enum."""
 
-    Battery = "battery"
+    BATTERY = "battery"
     CPU = "cpu"
-    Disks = "disks"
-    Displays = "displays"
-    GPUs = "gpus"
-    Media = "media"
-    Memory = "memory"
-    Networks = "networks"
-    Processes = "processes"
-    Sensors = "sensor"
-    System = "system"
+    DISKS = "disks"
+    DISPLAYS = "displays"
+    GPUS = "gpus"
+    MEDIA = "media"
+    MEMORY = "memory"
+    NETWORKS = "networks"
+    PROCESSES = "processes"
+    SENSORS = "sensor"
+    SYSTEM = "system"
 
 
 @dataclass

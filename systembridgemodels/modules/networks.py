@@ -1,4 +1,4 @@
-"""Networks"""
+"""Networks."""
 from __future__ import annotations
 
 from dataclasses import dataclass
@@ -6,7 +6,7 @@ from dataclasses import dataclass
 
 @dataclass
 class NetworkAddress:
-    """Network Address"""
+    """Network Address."""
 
     address: str | None = None
     family: str | None = None
@@ -17,7 +17,7 @@ class NetworkAddress:
 
 @dataclass
 class NetworkStats:
-    """Network Stats"""
+    """Network Stats."""
 
     isup: bool | None = None
     duplex: str | None = None
@@ -28,7 +28,7 @@ class NetworkStats:
 
 @dataclass
 class NetworkConnection:
-    """Network Connection"""
+    """Network Connection."""
 
     fd: int | None = None
     family: int | None = None
@@ -41,7 +41,7 @@ class NetworkConnection:
 
 @dataclass
 class NetworkIO:
-    """Network IO"""
+    """Network IO."""
 
     bytes_sent: int | None = None
     bytes_recv: int | None = None
@@ -55,7 +55,7 @@ class NetworkIO:
 
 @dataclass
 class Network:
-    """Network"""
+    """Network."""
 
     name: str | None = None
     addresses: list[NetworkAddress] | None = None
@@ -64,7 +64,7 @@ class Network:
 
 @dataclass
 class Networks:
-    """Networks"""
+    """Networks."""
 
     connections: list[NetworkConnection] | None = None
     io: NetworkIO | None = None

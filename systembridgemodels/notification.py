@@ -1,4 +1,4 @@
-"""Notification"""
+"""Notification."""
 from __future__ import annotations
 
 from dataclasses import dataclass
@@ -7,7 +7,7 @@ from typing import Any
 
 @dataclass
 class Action:
-    """Notification Action"""
+    """Notification Action."""
 
     command: str
     label: str
@@ -16,7 +16,7 @@ class Action:
 
 @dataclass
 class Audio:
-    """Notification Audio"""
+    """Notification Audio."""
 
     source: str
     volume: float | None = None
@@ -24,7 +24,7 @@ class Audio:
 
 @dataclass
 class Notification:
-    """Notification"""
+    """Notification."""
 
     title: str
     message: str | None = None

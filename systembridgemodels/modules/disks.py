@@ -1,4 +1,4 @@
-"""Disks"""
+"""Disks."""
 from __future__ import annotations
 
 from dataclasses import dataclass
@@ -6,7 +6,7 @@ from dataclasses import dataclass
 
 @dataclass
 class DiskIOCounters:
-    """Disk IO Counters"""
+    """Disk IO Counters."""
 
     read_count: int
     write_count: int
@@ -18,7 +18,7 @@ class DiskIOCounters:
 
 @dataclass
 class DiskUsage:
-    """Disk Usage"""
+    """Disk Usage."""
 
     total: int
     used: int
@@ -28,7 +28,7 @@ class DiskUsage:
 
 @dataclass
 class DiskPartition:
-    """Disk Partition"""
+    """Disk Partition."""
 
     device: str
     mount_point: str
@@ -41,7 +41,7 @@ class DiskPartition:
 
 @dataclass
 class Disk:
-    """Disk"""
+    """Disk."""
 
     name: str
     partitions: list[DiskPartition]
@@ -50,7 +50,7 @@ class Disk:
 
 @dataclass
 class Disks:
-    """Disks"""
+    """Disks."""
 
     devices: list[Disk]
     io_counters: DiskIOCounters | None = None

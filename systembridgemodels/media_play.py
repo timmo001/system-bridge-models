@@ -1,4 +1,4 @@
-"""Media Play"""
+"""Media Play."""
 from __future__ import annotations
 
 from dataclasses import dataclass
@@ -6,7 +6,7 @@ from dataclasses import dataclass
 
 @dataclass
 class MediaPlay:
-    """Media Play"""
+    """Media Play."""
 
     url: str
     album: str | None = None

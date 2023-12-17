@@ -1,4 +1,4 @@
-"""Processes"""
+"""Processes."""
 from __future__ import annotations
 
 from dataclasses import dataclass
@@ -6,7 +6,7 @@ from dataclasses import dataclass
 
 @dataclass
 class Process:
-    """Process"""
+    """Process."""
 
     id: float
     name: str | None = None
