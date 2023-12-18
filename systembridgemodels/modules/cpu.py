@@ -53,3 +53,4 @@ class CPU:
     usage: float | None = None
     usage_per_cpu: list[float] | None = None
     voltage: float | None = None
+    voltage_per_cpu: list[float | None] | None = None
