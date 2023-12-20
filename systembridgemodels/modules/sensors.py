@@ -67,18 +67,18 @@ class SensorsNVIDIADriver:
 class SensorsNVIDIAGPUs:
     id: int
     name: str
-    bios_oem_revision: int
-    bios_revision: int
-    bios_version: str
-    current_fan_speed_level: int
-    current_fan_speed_rpm: int
-    driver_model: int
-    memory_available: int
-    memory_capacity: int
-    memory_maker: str
-    serial: str
-    system_type: str
-    type: str
+    bios_oem_revision: int | None = None
+    bios_revision: int | None = None
+    bios_version: str | None = None
+    current_fan_speed_level: int | None = None
+    current_fan_speed_rpm: int | None = None
+    driver_model: int | None = None
+    memory_available: int | None = None
+    memory_capacity: int | None = None
+    memory_maker: str | None = None
+    serial: str | None = None
+    system_type: str | None = None
+    type: str | None = None
 
 
 @dataclass
