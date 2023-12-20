@@ -6,7 +6,7 @@ from enum import Enum
 from typing import Any
 
 
-class Action(Enum):
+class MediaAction(Enum):
     """Action."""
 
     play = "PLAY"
@@ -28,5 +28,5 @@ class Action(Enum):
 class MediaControl:
     """Media Control."""
 
-    action: Action
+    action: MediaAction
     value: Any | None = None
