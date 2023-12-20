@@ -28,5 +28,5 @@ class MediaAction(Enum):
 class MediaControl:
     """Media Control."""
 
-    action: str  # MediaAction
+    action: str
     value: Any | None = None
