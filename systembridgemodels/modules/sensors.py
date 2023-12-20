@@ -26,7 +26,7 @@ class SensorsWindowsHardware:
     sensors: list[SensorsWindowsSensor]
 
 @dataclass
-class Chipset:
+class SensorsNVIDIAChipset:
     id: int
     name: str
     flags: str
@@ -35,7 +35,7 @@ class Chipset:
 
 
 @dataclass
-class Display:
+class SensorsNVIDIADisplay:
     id: int
     name: str
     active: bool
@@ -57,14 +57,14 @@ class Display:
 
 
 @dataclass
-class Driver:
+class SensorsNVIDIADriver:
     branch_version: str
     interface_version: str
     version: int
 
 
 @dataclass
-class Gpus:
+class SensorsNVIDIAGPUs:
     id: int
     name: str
     bios_oem_revision: int
@@ -83,10 +83,10 @@ class Gpus:
 
 @dataclass
 class SensorsNVIDIA:
-    chipset: Chipset
-    displays: list[Display]
-    driver: Driver
-    gpus: list[Gpus]
+    chipset: SensorsNVIDIAChipset
+    displays: list[SensorsNVIDIADisplay]
+    driver: SensorsNVIDIADriver
+    gpus: list[SensorsNVIDIAGPUs]
 
 @dataclass
 class SensorsWindows:
