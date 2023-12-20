@@ -7,7 +7,7 @@ from typing import Any
 
 
 class MediaAction(Enum):
-    """Action."""
+    """Media Action."""
 
     play = "PLAY"
     pause = "PAUSE"
