@@ -64,7 +64,7 @@ class SensorsNVIDIADriver:
 
 
 @dataclass
-class SensorsNVIDIAGPUs:
+class SensorsNVIDIAGPU:
     id: int
     name: str
     bios_oem_revision: int | None = None
@@ -86,7 +86,7 @@ class SensorsNVIDIA:
     chipset: SensorsNVIDIAChipset
     displays: list[SensorsNVIDIADisplay]
     driver: SensorsNVIDIADriver
-    gpus: list[SensorsNVIDIAGPUs]
+    gpus: list[SensorsNVIDIAGPU]
 
 @dataclass
 class SensorsWindows:
