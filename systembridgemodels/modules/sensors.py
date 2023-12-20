@@ -27,6 +27,7 @@ class SensorsWindowsHardware:
 
 @dataclass
 class SensorsNVIDIAChipset:
+    """Sensors NVIDIA Chipset."""
     id: int
     name: str
     flags: str
@@ -36,6 +37,7 @@ class SensorsNVIDIAChipset:
 
 @dataclass
 class SensorsNVIDIADisplay:
+    """Sensors NVIDIA Display."""
     id: int
     name: str
     active: bool
@@ -58,6 +60,7 @@ class SensorsNVIDIADisplay:
 
 @dataclass
 class SensorsNVIDIADriver:
+    """Sensors NVIDIA Driver."""
     branch_version: str
     interface_version: str
     version: int
@@ -65,6 +68,7 @@ class SensorsNVIDIADriver:
 
 @dataclass
 class SensorsNVIDIAGPU:
+    """Sensors NVIDIA GPU."""
     id: int
     name: str
     bios_oem_revision: int | None = None
@@ -83,6 +87,7 @@ class SensorsNVIDIAGPU:
 
 @dataclass
 class SensorsNVIDIA:
+    """Sensors NVIDIA."""
     chipset: SensorsNVIDIAChipset
     displays: list[SensorsNVIDIADisplay]
     driver: SensorsNVIDIADriver
