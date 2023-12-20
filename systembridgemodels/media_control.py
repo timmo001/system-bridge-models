@@ -9,19 +9,19 @@ from typing import Any
 class MediaAction(Enum):
     """Media Action."""
 
-    play = "PLAY"
-    pause = "PAUSE"
-    stop = "STOP"
-    previous = "PREVIOUS"
-    next = "NEXT"
-    seek = "SEEK"
-    rewind = "REWIND"
-    fastforward = "FASTFORWARD"
-    shuffle = "SHUFFLE"
-    repeat = "REPEAT"
-    mute = "MUTE"
-    volumedown = "VOLUMEDOWN"
-    volumeup = "VOLUMEUP"
+    PLAY = "PLAY"
+    PAUSE = "PAUSE"
+    STOP = "STOP"
+    PREVIOUS = "PREVIOUS"
+    NEXT = "NEXT"
+    SEEK = "SEEK"
+    REWIND = "REWIND"
+    FASTFORWARD = "FASTFORWARD"
+    SHUFFLE = "SHUFFLE"
+    REPEAT = "REPEAT"
+    MUTE = "MUTE"
+    VOLUMEDOWN = "VOLUMEDOWN"
+    VOLUMEUP = "VOLUMEUP"
 
 
 @dataclass
