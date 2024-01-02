@@ -16,5 +16,5 @@ jobs:
     secrets:
       PUSH_TOKEN: ${{ secrets.PUSH_TOKEN }}
     with:
-      module-name: systembridgeconnector
+      module-name: systembridgemodels
       use-incremental: true
