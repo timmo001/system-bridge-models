@@ -14,16 +14,17 @@ with open("README.md", encoding="utf-8") as f:
 
 setup(
     name="systembridgemodels",
-    description="System Bridge Models",
-    long_description=readme,
-    long_description_content_type="text/markdown",
-    keywords="system-bridge",
     author="Aidan Timson (Timmo)",
     author_email="aidan@timmo.dev",
+    description="System Bridge Models",
+    keywords="system-bridge",
     license="Apache-2.0",
+    long_description=readme,
+    long_description_content_type="text/markdown",
     url="https://github.com/timmo001/system-bridge-models",
-    packages=find_packages(exclude=["tests", "generator"]),
     install_requires=requirements,
+    packages=find_packages(exclude=["tests", "generator"]),
+    python_requires=">=3.12",
     setup_requires=requirements_setup,
     use_incremental=True,
 )
