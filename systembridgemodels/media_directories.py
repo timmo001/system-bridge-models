@@ -6,7 +6,7 @@ from dataclasses import dataclass
 
 
 @dataclass
-class Directory:
+class MediaDirectory:
     """Directory."""
 
     key: str
