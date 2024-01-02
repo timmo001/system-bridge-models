@@ -35,22 +35,29 @@ class CPUTimes:
 
 
 @dataclass
+class PerCPU:
+    """Per CPU."""
+
+    frequency: list[CPUFrequency] | None = None
+    power: list[float] | None = None
+    times: list[CPUTimes] | None = None
+    times_percent: list[CPUTimes] | None = None
+    usage: list[float] | None = None
+    voltage: list[float | None] | None = None
+
+
+@dataclass
 class CPU:
     """CPU."""
 
     count: int | None = None
     frequency: CPUFrequency | None = None
-    frequency_per_cpu: list[CPUFrequency] | None = None
     load_average: float | None = None
+    per_cpu: list[PerCPU] | None = None
     power_package: float | None = None
-    power_per_cpu: list[float] | None = None
     stats: CPUStats | None = None
     temperature: float | None = None
     times: CPUTimes | None = None
-    times_per_cpu: list[CPUTimes] | None = None
     times_percent: CPUTimes | None = None
-    times_percent_per_cpu: list[CPUTimes] | None = None
     usage: float | None = None
-    usage_per_cpu: list[float] | None = None
     voltage: float | None = None
-    voltage_per_cpu: list[float | None] | None = None
