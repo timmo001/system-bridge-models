@@ -53,7 +53,7 @@ class SettingsAPI:
     """Settings API."""
 
     token: str = field(default_factory=generate_token)
-    port: int = field(default=9174)
+    port: int = field(default=9170)
 
 
 @dataclass
