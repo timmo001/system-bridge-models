@@ -18,6 +18,3 @@ class Display:
     is_primary: bool | None = None
     pixel_clock: float | None = None
     refresh_rate: float | None = None
-
-
-type Displays = list[Display]

@@ -11,6 +11,3 @@ class Directory:
 
     key: str
     path: str
-
-
-type MediaDirectories = list[Directory]

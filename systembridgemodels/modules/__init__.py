@@ -7,12 +7,12 @@ from enum import Enum
 from .battery import Battery
 from .cpu import CPU
 from .disks import Disks
-from .displays import Displays
-from .gpus import GPUs
+from .displays import Display
+from .gpus import GPU
 from .media import Media
 from .memory import Memory
 from .networks import Networks
-from .processes import Processes
+from .processes import Process
 from .sensors import Sensors
 from .system import System
 
@@ -52,11 +52,11 @@ class ModulesData:
     battery: Battery | None = None
     cpu: CPU | None = None
     disks: Disks | None = None
-    displays: Displays | None = None
-    gpus: GPUs | None = None
+    displays: list[Display] | None = None
+    gpus: list[GPU] | None = None
     media: Media | None = None
     memory: Memory | None = None
     networks: Networks | None = None
-    processes: Processes | None = None
+    processes: list[Process] | None = None
     sensors: Sensors | None = None
     system: System | None = None

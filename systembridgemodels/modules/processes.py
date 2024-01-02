@@ -17,6 +17,3 @@ class Process:
     status: str | None = None
     username: str | None = None
     working_directory: str | None = None
-
-
-type Processes = list[Process]
