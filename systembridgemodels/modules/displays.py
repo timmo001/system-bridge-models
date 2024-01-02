@@ -8,6 +8,7 @@ from dataclasses import dataclass
 class Display:
     """Display."""
 
+    id: str
     name: str
     resolution_horizontal: int
     resolution_vertical: int

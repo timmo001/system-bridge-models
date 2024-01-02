@@ -38,6 +38,7 @@ class CPUTimes:
 class PerCPU:
     """Per CPU."""
 
+    id: int
     frequency: CPUFrequency | None = None
     power: float | None = None
     times: CPUTimes | None = None

@@ -8,6 +8,7 @@ from dataclasses import dataclass
 class GPU:
     """GPU."""
 
+    id: str
     name: str
     core_clock: float | None = None
     core_load: float | None = None
