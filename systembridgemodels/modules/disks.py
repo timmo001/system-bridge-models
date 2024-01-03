@@ -54,3 +54,44 @@ class Disks:
 
     devices: list[Disk]
     io_counters: DiskIOCounters | None = None
+
+    def __post_init__(self) -> None:
+        """Post Init."""
+        if isinstance(self.devices, list) and all(
+            isinstance(item, dict) for item in self.devices
+        ):
+            self.devices = [
+                Disk(
+                    name=device.name,
+                    partitions=[
+                        DiskPartition(
+                            device=partition.device,
+                            mount_point=partition.mount_point,
+                            filesystem_type=partition.filesystem_type,
+                            options=partition.options,
+                            max_file_size=partition.max_file_size,
+                            max_path_length=partition.max_path_length,
+                            usage=DiskUsage(
+                                total=partition.usage.total,
+                                used=partition.usage.used,
+                                free=partition.usage.free,
+                                percent=partition.usage.percent,
+                            )
+                            if partition.usage
+                            else None,
+                        )
+                        for partition in device.partitions
+                    ],
+                    io_counters=DiskIOCounters(
+                        read_count=device.io_counters.read_count,
+                        write_count=device.io_counters.write_count,
+                        read_bytes=device.io_counters.read_bytes,
+                        write_bytes=device.io_counters.write_bytes,
+                        read_time=device.io_counters.read_time,
+                        write_time=device.io_counters.write_time,
+                    )
+                    if device.io_counters
+                    else None,
+                )
+                for device in self.devices
+            ]
