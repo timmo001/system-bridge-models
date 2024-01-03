@@ -37,5 +37,13 @@ class MemoryVirtual:
 class Memory:
     """Memory."""
 
-    swap: MemorySwap
-    virtual: MemoryVirtual
+    swap: MemorySwap | None = None
+    virtual: MemoryVirtual | None = None
+
+    def __post_init__(self) -> None:
+        """Post Init."""
+        if isinstance(self.swap, dict):
+            self.swap = MemorySwap(**self.swap)
+
+        if isinstance(self.virtual, dict):
+            self.virtual = MemoryVirtual(**self.virtual)
