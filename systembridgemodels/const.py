@@ -52,7 +52,7 @@ MODEL_MAP = {
     MODEL_DATA: ModulesData,
     MODEL_DISKS: Disks,
     MODEL_DISPLAYS: Display, # Map to Display not list[Display] so it can be mapped
-    MODEL_GPUS: GPU,
+    MODEL_GPUS: GPU, # Map to GPU not list[GPU] so it can be mapped
     MODEL_KEYBOARD_KEY: KeyboardKey,
     MODEL_KEYBOARD_TEXT: KeyboardText,
     MODEL_MEDIA_DIRECTORIES: MediaDirectory, # Map to MediaDirectory not list[MediaDirectory] so it can be mapped
