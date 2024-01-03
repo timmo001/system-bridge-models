@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+from typing import cast
 
 
 @dataclass
@@ -46,6 +47,17 @@ class PerCPU:
     usage: float | None = None
     voltage: float | None = None
 
+    def __post_init__(self) -> None:
+        """Post Init."""
+        if isinstance(self.frequency, dict):
+            self.frequency = CPUFrequency(**self.frequency)
+
+        if isinstance(self.times, dict):
+            self.times = CPUTimes(**self.times)
+
+        if isinstance(self.times_percent, dict):
+            self.times_percent = CPUTimes(**self.times_percent)
+
 
 @dataclass
 class CPU:
@@ -62,3 +74,41 @@ class CPU:
     times_percent: CPUTimes | None = None
     usage: float | None = None
     voltage: float | None = None
+
+    def __post_init__(self) -> None:
+        """Post Init."""
+        if isinstance(self.frequency, dict):
+            self.frequency = CPUFrequency(**self.frequency)
+
+        if isinstance(self.per_cpu, list) and all(
+            isinstance(item, dict) for item in self.per_cpu
+        ):
+            new_per_cpu: list[PerCPU] = []
+            for p in self.per_cpu:
+                per_cpu: dict = cast(dict, p)
+                frequency = per_cpu.get("frequency")
+                times = per_cpu.get("times")
+                times_percent = per_cpu.get("times_percent")
+                new_per_cpu.append(
+                    PerCPU(
+                        id=per_cpu["id"],
+                        frequency=CPUFrequency(**frequency) if frequency else None,
+                        power=per_cpu["power"],
+                        times=CPUTimes(**times) if times else None,
+                        times_percent=CPUTimes(**times_percent)
+                        if times_percent
+                        else None,
+                        usage=per_cpu["usage"],
+                        voltage=per_cpu["voltage"],
+                    )
+                )
+            self.per_cpu = new_per_cpu
+
+        if isinstance(self.stats, dict):
+            self.stats = CPUStats(**self.stats)
+
+        if isinstance(self.times, dict):
+            self.times = CPUTimes(**self.times)
+
+        if isinstance(self.times_percent, dict):
+            self.times_percent = CPUTimes(**self.times_percent)
