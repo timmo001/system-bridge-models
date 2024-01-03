@@ -39,6 +39,11 @@ class DiskPartition:
     max_path_length: int
     usage: DiskUsage | None = None
 
+    def __post_init__(self) -> None:
+        """Post Init."""
+        if isinstance(self.usage, dict):
+            self.usage = DiskUsage(**self.usage)
+
 
 @dataclass
 class Disk:
@@ -103,3 +108,6 @@ class Disks:
                     )
                 )
             self.devices = new_devices
+
+        if isinstance(self.io_counters, dict):
+            self.io_counters = DiskIOCounters(**self.io_counters)
