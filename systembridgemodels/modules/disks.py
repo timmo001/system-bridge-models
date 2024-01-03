@@ -61,18 +61,7 @@ class Disk:
             new_partitions: list[DiskPartition] = []
             for p in self.partitions:
                 partition: dict = cast(dict, p)
-                usage = partition.get("usage")
-                new_partitions.append(
-                    DiskPartition(
-                        device=partition["device"],
-                        mount_point=partition["mount_point"],
-                        filesystem_type=partition["filesystem_type"],
-                        options=partition["options"],
-                        max_file_size=partition["max_file_size"],
-                        max_path_length=partition["max_path_length"],
-                        usage=(DiskUsage(**usage) if usage else None),
-                    )
-                )
+                new_partitions.append(DiskPartition(**partition))
             self.partitions = new_partitions
 
         if isinstance(self.io_counters, dict):
