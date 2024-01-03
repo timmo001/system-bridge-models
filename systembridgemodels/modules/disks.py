@@ -70,6 +70,9 @@ class Disk:
                 )
             self.partitions = new_partitions
 
+        if isinstance(self.io_counters, dict):
+            self.io_counters = DiskIOCounters(**self.io_counters)
+
 
 @dataclass
 class Disks:
