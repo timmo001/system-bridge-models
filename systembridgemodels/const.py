@@ -27,7 +27,7 @@ MODEL_DATA = "data"
 MODEL_DISKS = "disks"
 MODEL_DISPLAYS = "displays"
 MODEL_GENERIC = "generic"
-MODEL_GPU = "gpu"
+MODEL_GPUS = "gpus"
 MODEL_KEYBOARD_KEY = "keyboard_key"
 MODEL_KEYBOARD_TEXT = "keyboard_text"
 MODEL_MEDIA = "media"
@@ -51,11 +51,11 @@ MODEL_MAP = {
     MODEL_CPU: CPU,
     MODEL_DATA: ModulesData,
     MODEL_DISKS: Disks,
-    MODEL_DISPLAYS: list[Display],
-    MODEL_GPU: GPU,
+    MODEL_DISPLAYS: Display, # Map to Display not list[Display] so it can be mapped
+    MODEL_GPUS: GPU,
     MODEL_KEYBOARD_KEY: KeyboardKey,
     MODEL_KEYBOARD_TEXT: KeyboardText,
-    MODEL_MEDIA_DIRECTORIES: list[MediaDirectory],
+    MODEL_MEDIA_DIRECTORIES: MediaDirectory, # Map to MediaDirectory not list[MediaDirectory] so it can be mapped
     MODEL_MEDIA_FILE: MediaFile,
     MODEL_MEDIA_FILES: MediaFiles,
     MODEL_MEDIA: Media,
@@ -64,7 +64,7 @@ MODEL_MAP = {
     MODEL_NOTIFICATION: Notification,
     MODEL_OPEN_PATH: OpenPath,
     MODEL_OPEN_URL: OpenUrl,
-    MODEL_PROCESSES: list[Process],
+    MODEL_PROCESSES: Process, # Map to Process not list[Process] so it can be mapped
     MODEL_RESPONSE: Response,
     MODEL_SENSORS: Sensors,
     MODEL_SYSTEM: System,
