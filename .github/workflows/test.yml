@@ -20,5 +20,7 @@ concurrency:
 jobs:
   test:
     uses: timmo001/workflows/.github/workflows/test-pytest.yml@master
+    secrets:
+      CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
     with:
       module-name: "systembridgemodels"
