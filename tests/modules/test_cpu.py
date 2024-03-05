@@ -136,3 +136,42 @@ def test_cpu_post_init():
 
     cpu_converted = CPU(**cpu_dict)
     test_cpu(cpu_converted)
+
+
+def test_cpu_per_cpu_post_init():
+    """Test CPU PerCPU post init."""
+    assert isinstance(model.per_cpu, list)
+
+    per_cpu = model.per_cpu[0]
+    per_cpu_dict = asdict(per_cpu)
+    assert isinstance(per_cpu_dict["id"], int)
+    assert isinstance(per_cpu_dict["frequency"], dict)
+    assert isinstance(per_cpu_dict["power"], float)
+    assert isinstance(per_cpu_dict["times"], dict)
+    assert isinstance(per_cpu_dict["times_percent"], dict)
+    assert isinstance(per_cpu_dict["usage"], float)
+    assert isinstance(per_cpu_dict["voltage"], float)
+
+    per_cpu_converted = PerCPU(**per_cpu_dict)
+    assert isinstance(per_cpu_converted, PerCPU)
+    assert isinstance(per_cpu_converted.id, int)
+    assert isinstance(per_cpu_converted.frequency, CPUFrequency)
+    assert isinstance(per_cpu_converted.times, CPUTimes)
+    assert isinstance(per_cpu_converted.times_percent, CPUTimes)
+    assert isinstance(per_cpu_converted.usage, float)
+    assert isinstance(per_cpu_converted.voltage, float)
+    assert per_cpu_converted.id == 0
+    assert per_cpu_converted.frequency.current == 2.3
+    assert per_cpu_converted.power == 50.0
+    assert per_cpu_converted.times.user == 120.0
+    assert per_cpu_converted.times.system == 30.0
+    assert per_cpu_converted.times.idle == 600.0
+    assert per_cpu_converted.times.interrupt == 0.0
+    assert per_cpu_converted.times.dpc == 0.0
+    assert per_cpu_converted.times_percent.user == 20.0
+    assert per_cpu_converted.times_percent.system == 5.0
+    assert per_cpu_converted.times_percent.idle == 100.0
+    assert per_cpu_converted.times_percent.interrupt == 0.0
+    assert per_cpu_converted.times_percent.dpc == 0.0
+    assert per_cpu_converted.usage == 20.0
+    assert per_cpu_converted.voltage == 1.2
