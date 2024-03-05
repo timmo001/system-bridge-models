@@ -66,6 +66,29 @@ model = CPU(
 )
 
 
+def _test_per_cpu(per_cpu: PerCPU):
+    """Test the PerCPU model."""
+    assert isinstance(per_cpu, PerCPU)
+    assert per_cpu.id == 0
+    assert isinstance(per_cpu.frequency, CPUFrequency)
+    assert per_cpu.frequency.current == 2.3
+    assert per_cpu.power == 50.0
+    assert isinstance(per_cpu.times, CPUTimes)
+    assert per_cpu.times.user == 120.0
+    assert per_cpu.times.system == 30.0
+    assert per_cpu.times.idle == 600.0
+    assert per_cpu.times.interrupt == 0.0
+    assert per_cpu.times.dpc == 0.0
+    assert isinstance(per_cpu.times_percent, CPUTimes)
+    assert per_cpu.times_percent.user == 20.0
+    assert per_cpu.times_percent.system == 5.0
+    assert per_cpu.times_percent.idle == 100.0
+    assert per_cpu.times_percent.interrupt == 0.0
+    assert per_cpu.times_percent.dpc == 0.0
+    assert per_cpu.usage == 20.0
+    assert per_cpu.voltage == 1.2
+
+
 def test_cpu(cpu: CPU = model):
     """Test the CPU model."""
     assert isinstance(cpu, CPU)
@@ -74,25 +97,7 @@ def test_cpu(cpu: CPU = model):
     assert cpu.frequency.current == 2.3
     assert cpu.load_average == 1.5
     assert isinstance(cpu.per_cpu, list)
-    assert isinstance(cpu.per_cpu[0], PerCPU)
-    assert cpu.per_cpu[0].id == 0
-    assert isinstance(cpu.per_cpu[0].frequency, CPUFrequency)
-    assert cpu.per_cpu[0].frequency.current == 2.3
-    assert cpu.per_cpu[0].power == 50.0
-    assert isinstance(cpu.per_cpu[0].times, CPUTimes)
-    assert cpu.per_cpu[0].times.user == 120.0
-    assert cpu.per_cpu[0].times.system == 30.0
-    assert cpu.per_cpu[0].times.idle == 600.0
-    assert cpu.per_cpu[0].times.interrupt == 0.0
-    assert cpu.per_cpu[0].times.dpc == 0.0
-    assert isinstance(cpu.per_cpu[0].times_percent, CPUTimes)
-    assert cpu.per_cpu[0].times_percent.user == 20.0
-    assert cpu.per_cpu[0].times_percent.system == 5.0
-    assert cpu.per_cpu[0].times_percent.idle == 100.0
-    assert cpu.per_cpu[0].times_percent.interrupt == 0.0
-    assert cpu.per_cpu[0].times_percent.dpc == 0.0
-    assert cpu.per_cpu[0].usage == 20.0
-    assert cpu.per_cpu[0].voltage == 1.2
+    _test_per_cpu(cpu.per_cpu[0])
     assert cpu.power == 200.0
     assert isinstance(cpu.stats, CPUStats)
     assert cpu.stats.ctx_switches == 1000
@@ -153,25 +158,4 @@ def test_cpu_per_cpu_dict():
     assert isinstance(per_cpu_dict["voltage"], float)
 
     per_cpu_converted = PerCPU(**per_cpu_dict)
-    assert isinstance(per_cpu_converted, PerCPU)
-    assert isinstance(per_cpu_converted.id, int)
-    assert isinstance(per_cpu_converted.frequency, CPUFrequency)
-    assert isinstance(per_cpu_converted.times, CPUTimes)
-    assert isinstance(per_cpu_converted.times_percent, CPUTimes)
-    assert isinstance(per_cpu_converted.usage, float)
-    assert isinstance(per_cpu_converted.voltage, float)
-    assert per_cpu_converted.id == 0
-    assert per_cpu_converted.frequency.current == 2.3
-    assert per_cpu_converted.power == 50.0
-    assert per_cpu_converted.times.user == 120.0
-    assert per_cpu_converted.times.system == 30.0
-    assert per_cpu_converted.times.idle == 600.0
-    assert per_cpu_converted.times.interrupt == 0.0
-    assert per_cpu_converted.times.dpc == 0.0
-    assert per_cpu_converted.times_percent.user == 20.0
-    assert per_cpu_converted.times_percent.system == 5.0
-    assert per_cpu_converted.times_percent.idle == 100.0
-    assert per_cpu_converted.times_percent.interrupt == 0.0
-    assert per_cpu_converted.times_percent.dpc == 0.0
-    assert per_cpu_converted.usage == 20.0
-    assert per_cpu_converted.voltage == 1.2
+    _test_per_cpu(per_cpu_converted)
