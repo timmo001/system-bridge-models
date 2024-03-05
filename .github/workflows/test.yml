@@ -18,7 +18,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build:
+  test:
     uses: timmo001/workflows/.github/workflows/test-pytest.yml@master
     with:
       module-name: "systembridgemodels"
