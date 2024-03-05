@@ -116,8 +116,8 @@ def test_cpu(cpu: CPU = model):
     assert cpu.voltage == 1.2
 
 
-def test_cpu_post_init():
-    """Test CPU post init."""
+def test_cpu_dict():
+    """Test CPU dict."""
     cpu_dict = asdict(model)
     assert isinstance(cpu_dict["frequency"], dict)
     assert isinstance(cpu_dict["per_cpu"], list)
@@ -138,8 +138,8 @@ def test_cpu_post_init():
     test_cpu(cpu_converted)
 
 
-def test_cpu_per_cpu_post_init():
-    """Test CPU PerCPU post init."""
+def test_cpu_per_cpu_dict():
+    """Test CPU PerCPU dict."""
     assert isinstance(model.per_cpu, list)
 
     per_cpu = model.per_cpu[0]
