@@ -4,19 +4,19 @@
     {
       "type": "shell",
       "label": "pip install",
-      "command": "python -m pip install .",
+      "command": "pip install .",
       "dependsOn": []
     },
     {
       "type": "shell",
       "label": "pip install test requirements",
-      "command": "python -m pip install -r requirements_test.txt",
+      "command": "pip install -r requirements_test.txt",
       "dependsOn": ["pip install"]
     },
     {
       "type": "shell",
       "label": "pytest",
-      "command": "python -m pytest --cov=systembridgemodels --cov-report term-missing -vv",
+      "command": "pytest --cov=systembridgemodels --cov-report term-missing -vv",
       "dependsOn": ["pip install test requirements"]
     }
   ]
