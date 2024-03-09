@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+from typing import cast
 
 
 @dataclass
@@ -27,3 +28,14 @@ class MediaFiles:
 
     files: list[MediaFile]
     path: str
+
+    def __post_init__(self) -> None:
+        """Post Init."""
+        if isinstance(self.files, list) and all(
+            isinstance(item, dict) for item in self.files
+        ):
+            new_files: list[MediaFile] = []
+            for f in self.files:
+                file: dict = cast(dict, f)
+                new_files.append(MediaFile(**file))
+            self.files = new_files
