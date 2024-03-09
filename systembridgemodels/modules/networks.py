@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+from typing import cast
 
 
 @dataclass
@@ -61,6 +62,21 @@ class Network:
     addresses: list[NetworkAddress] | None = None
     stats: NetworkStats | None = None
 
+    def __post_init__(self) -> None:
+        """Post Init."""
+        if isinstance(self.addresses, list) and all(
+            isinstance(item, dict) for item in self.addresses
+        ):
+            new_addresses: list[NetworkAddress] = []
+            for a in self.addresses:
+                address: dict = cast(dict, a)
+                new_addresses.append(NetworkAddress(**address))
+            self.addresses = new_addresses
+
+        if isinstance(self.stats, dict):
+            stats = self.stats
+            self.stats = NetworkStats(**stats)
+
 
 @dataclass
 class Networks:
@@ -69,3 +85,27 @@ class Networks:
     connections: list[NetworkConnection] | None = None
     io: NetworkIO | None = None
     networks: list[Network] | None = None
+
+    def __post_init__(self) -> None:
+        """Post Init."""
+        if isinstance(self.connections, list) and all(
+            isinstance(item, dict) for item in self.connections
+        ):
+            new_connections: list[NetworkConnection] = []
+            for c in self.connections:
+                connection: dict = cast(dict, c)
+                new_connections.append(NetworkConnection(**connection))
+            self.connections = new_connections
+
+        if isinstance(self.io, dict):
+            io = self.io
+            self.io = NetworkIO(**io)
+
+        if isinstance(self.networks, list) and all(
+            isinstance(item, dict) for item in self.networks
+        ):
+            new_networks: list[Network] = []
+            for n in self.networks:
+                network: dict = cast(dict, n)
+                new_networks.append(Network(**network))
+            self.networks = new_networks
