@@ -2,7 +2,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
-from typing import Any
+from typing import Any, cast
 
 
 @dataclass
@@ -33,3 +33,14 @@ class Notification:
     actions: list[Action] | None = None
     timeout: float | None = None
     audio: Audio | None = None
+
+    def __post_init__(self):
+        """Post init."""
+        if isinstance(self.actions, list) and all(
+            isinstance(item, dict) for item in self.actions
+        ):
+            new_actions: list[Action] = []
+            for a in self.actions:
+                action = cast(dict, a)
+                new_actions.append(Action(**action))
+            self.actions = new_actions
