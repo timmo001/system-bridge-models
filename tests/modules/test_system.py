@@ -4,7 +4,7 @@ from systembridgemodels.fixtures.modules.system import FIXTURE_SYSTEM
 from systembridgemodels.modules.system import System, SystemUser
 
 
-def test_networks():
+def test_system():
     """Test the system model."""
     system = FIXTURE_SYSTEM
     assert isinstance(system, System)
