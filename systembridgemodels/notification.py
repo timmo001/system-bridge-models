@@ -44,3 +44,7 @@ class Notification:
                 action = cast(dict, a)
                 new_actions.append(Action(**action))
             self.actions = new_actions
+
+        if isinstance(self.audio, dict):
+            audio = cast(dict, self.audio)
+            self.audio = Audio(**audio)
