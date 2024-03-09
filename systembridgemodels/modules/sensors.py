@@ -114,10 +114,10 @@ class SensorsNVIDIAGPU:
 class SensorsNVIDIA:
     """Sensors NVIDIA."""
 
-    chipset: SensorsNVIDIAChipset
-    displays: list[SensorsNVIDIADisplay]
-    driver: SensorsNVIDIADriver
-    gpus: list[SensorsNVIDIAGPU]
+    chipset: SensorsNVIDIAChipset | None = None
+    displays: list[SensorsNVIDIADisplay] | None = None
+    driver: SensorsNVIDIADriver | None = None
+    gpus: list[SensorsNVIDIAGPU] | None = None
 
     def __post_init__(self):
         """Post Init."""
