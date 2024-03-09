@@ -1,53 +1,14 @@
-"""Test the disks model."""
+"""Test the disks module model."""
 
 from dataclasses import asdict
 
+from systembridgemodels.fixtures.modules.disks import FIXTURE_DISKS
 from systembridgemodels.modules.disks import (
     Disk,
     DiskIOCounters,
     DiskPartition,
     Disks,
     DiskUsage,
-)
-
-model = Disks(
-    devices=[
-        Disk(
-            name="name",
-            partitions=[
-                DiskPartition(
-                    device="device",
-                    mount_point="mountpoint",
-                    filesystem_type="fstype",
-                    options="options",
-                    max_file_size=1,
-                    max_path_length=2,
-                    usage=DiskUsage(
-                        total=1,
-                        used=2,
-                        free=3,
-                        percent=40.2,
-                    ),
-                ),
-            ],
-            io_counters=DiskIOCounters(
-                read_bytes=1,
-                write_bytes=2,
-                read_count=3,
-                write_count=4,
-                read_time=5,
-                write_time=6,
-            ),
-        )
-    ],
-    io_counters=DiskIOCounters(
-        read_bytes=1,
-        write_bytes=2,
-        read_count=3,
-        write_count=4,
-        read_time=5,
-        write_time=6,
-    ),
 )
 
 
@@ -81,7 +42,7 @@ def _test_disk(disk: Disk):
     assert disk.io_counters.write_time == 6
 
 
-def test_disks(disks: Disks = model):
+def test_disks(disks: Disks = FIXTURE_DISKS):
     """Test the disks model."""
     assert isinstance(disks, Disks)
     assert isinstance(disks.devices, list)
@@ -90,7 +51,7 @@ def test_disks(disks: Disks = model):
 
 def test_disks_dict():
     """Test disks dict."""
-    disks_dict = asdict(model)
+    disks_dict = asdict(FIXTURE_DISKS)
     assert isinstance(disks_dict, dict)
     assert isinstance(disks_dict["devices"], list)
     assert isinstance(disks_dict["devices"][0], dict)
@@ -129,7 +90,7 @@ def test_disks_dict():
 
 def test_disks_devices_dict():
     """Test disks devices dict."""
-    disk_dict = asdict(model.devices[0])
+    disk_dict = asdict(FIXTURE_DISKS.devices[0])
     assert disk_dict["name"] == "name"
     assert isinstance(disk_dict["partitions"], list)
     assert isinstance(disk_dict["partitions"][0], dict)
@@ -158,7 +119,7 @@ def test_disks_devices_dict():
 
 def test_disks_devices_partition_dict():
     """Test disks devices partition dict."""
-    partition_dict = asdict(model.devices[0].partitions[0])
+    partition_dict = asdict(FIXTURE_DISKS.devices[0].partitions[0])
     assert partition_dict["device"] == "device"
     assert partition_dict["mount_point"] == "mountpoint"
     assert partition_dict["filesystem_type"] == "fstype"

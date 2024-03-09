@@ -1,23 +1,12 @@
-"""Test the networks model."""
+"""Test the networks module model."""
 
+from systembridgemodels.fixtures.modules.processes import FIXTURE_PROCESSES
 from systembridgemodels.modules.processes import Process
 
 
 def test_networks():
     """Test the processes model."""
-    processes = [
-        Process(
-            id=1234,
-            name="name",
-            cpu_usage=12.3,
-            created=12.3,
-            memory_usage=12.3,
-            path="/path",
-            status="running",
-            username="username",
-            working_directory="/working/directory",
-        )
-    ]
+    processes = FIXTURE_PROCESSES
     assert isinstance(processes, list)
     assert isinstance(processes[0], Process)
     assert processes[0].id == 1234
