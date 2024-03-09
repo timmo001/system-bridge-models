@@ -1,35 +1,12 @@
-"""Test the memory model."""
+"""Test the memory module model."""
 
 from dataclasses import asdict
 
+from systembridgemodels.fixtures.modules.memory import FIXTURE_MEMORY
 from systembridgemodels.modules.memory import Memory, MemorySwap, MemoryVirtual
 
-model = Memory(
-    swap=MemorySwap(
-        total=1000,
-        used=500,
-        free=500,
-        percent=50.0,
-        sin=100,
-        sout=100,
-    ),
-    virtual=MemoryVirtual(
-        total=1000,
-        available=500,
-        percent=50.0,
-        used=500,
-        free=500,
-        active=500,
-        inactive=500,
-        buffers=500,
-        cached=500,
-        wired=500,
-        shared=500,
-    ),
-)
 
-
-def test_memory(memory: Memory = model):
+def test_memory(memory: Memory = FIXTURE_MEMORY):
     """Test the memory model."""
     assert isinstance(memory, Memory)
     assert isinstance(memory.swap, MemorySwap)
@@ -55,7 +32,7 @@ def test_memory(memory: Memory = model):
 
 def test_memory_dict():
     """Test memory dict."""
-    memory_dict = asdict(model)
+    memory_dict = asdict(FIXTURE_MEMORY)
     assert isinstance(memory_dict, dict)
     assert isinstance(memory_dict["swap"], dict)
     assert memory_dict["swap"]["total"] == 1000

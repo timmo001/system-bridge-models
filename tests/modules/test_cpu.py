@@ -1,69 +1,9 @@
-"""Test the CPU model."""
+"""Test the CPU module model."""
 
 from dataclasses import asdict
 
+from systembridgemodels.fixtures.modules.cpu import FIXTURE_CPU
 from systembridgemodels.modules.cpu import CPU, CPUFrequency, CPUStats, CPUTimes, PerCPU
-
-model = CPU(
-    count=4,
-    frequency=CPUFrequency(
-        current=2.3,
-        min=0.8,
-        max=3.1,
-    ),
-    load_average=1.5,
-    per_cpu=[
-        PerCPU(
-            id=0,
-            frequency=CPUFrequency(
-                current=2.3,
-                min=0.8,
-                max=3.1,
-            ),
-            power=50.0,
-            times=CPUTimes(
-                user=120.0,
-                system=30.0,
-                idle=600.0,
-                interrupt=0.0,
-                dpc=0.0,
-            ),
-            times_percent=CPUTimes(
-                user=20.0,
-                system=5.0,
-                idle=100.0,
-                interrupt=0.0,
-                dpc=0.0,
-            ),
-            usage=20.0,
-            voltage=1.2,
-        )
-    ],
-    power=200.0,
-    stats=CPUStats(
-        ctx_switches=1000,
-        interrupts=500,
-        soft_interrupts=200,
-        syscalls=8000,
-    ),
-    temperature=45.0,
-    times=CPUTimes(
-        user=480.0,
-        system=120.0,
-        idle=2400.0,
-        interrupt=0.0,
-        dpc=0.0,
-    ),
-    times_percent=CPUTimes(
-        user=80.0,
-        system=20.0,
-        idle=400.0,
-        interrupt=0.0,
-        dpc=0.0,
-    ),
-    usage=80.0,
-    voltage=1.2,
-)
 
 
 def _test_per_cpu(per_cpu: PerCPU):
@@ -89,7 +29,7 @@ def _test_per_cpu(per_cpu: PerCPU):
     assert per_cpu.voltage == 1.2
 
 
-def test_cpu(cpu: CPU = model):
+def test_cpu(cpu: CPU = FIXTURE_CPU):
     """Test the CPU model."""
     assert isinstance(cpu, CPU)
     assert cpu.count == 4
@@ -123,7 +63,7 @@ def test_cpu(cpu: CPU = model):
 
 def test_cpu_dict():
     """Test CPU dict."""
-    cpu_dict = asdict(model)
+    cpu_dict = asdict(FIXTURE_CPU)
     assert isinstance(cpu_dict["frequency"], dict)
     assert isinstance(cpu_dict["per_cpu"], list)
     assert isinstance(cpu_dict["per_cpu"][0], dict)
@@ -145,9 +85,9 @@ def test_cpu_dict():
 
 def test_cpu_per_cpu_dict():
     """Test CPU PerCPU dict."""
-    assert isinstance(model.per_cpu, list)
+    assert isinstance(FIXTURE_CPU.per_cpu, list)
 
-    per_cpu = model.per_cpu[0]
+    per_cpu = FIXTURE_CPU.per_cpu[0]
     per_cpu_dict = asdict(per_cpu)
     assert isinstance(per_cpu_dict["id"], int)
     assert isinstance(per_cpu_dict["frequency"], dict)

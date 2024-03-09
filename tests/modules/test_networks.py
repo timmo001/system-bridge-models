@@ -1,5 +1,6 @@
-"""Test the networks model."""
+"""Test the networks module model."""
 
+from systembridgemodels.fixtures.modules.networks import FIXTURE_NETWORKS
 from systembridgemodels.modules.networks import (
     Network,
     NetworkAddress,
@@ -12,52 +13,7 @@ from systembridgemodels.modules.networks import (
 
 def test_networks():
     """Test the networks model."""
-    networks = Networks(
-        connections=[
-            NetworkConnection(
-                fd=1,
-                family=2,
-                type=3,
-                laddr="laddr",
-                raddr="raddr",
-                status="status",
-                pid=4,
-            )
-        ],
-        io=NetworkIO(
-            bytes_sent=1,
-            bytes_recv=2,
-            packets_sent=3,
-            packets_recv=4,
-            errin=5,
-            errout=6,
-            dropin=7,
-            dropout=8,
-        ),
-        networks=[
-            Network(
-                name="name",
-                addresses=[
-                    NetworkAddress(
-                        address="address",
-                        netmask="netmask",
-                        broadcast="broadcast",
-                        ptp="ptp",
-                    )
-                ],
-                stats=NetworkStats(
-                    isup=True,
-                    duplex="duplex",
-                    speed=1,
-                    mtu=2,
-                    flags=[
-                        "flag1",
-                        "flag2",
-                    ],
-                ),
-            )
-        ],
-    )
+    networks = FIXTURE_NETWORKS
     assert isinstance(networks, Networks)
     assert isinstance(networks.connections, list)
     assert isinstance(networks.connections[0], NetworkConnection)
