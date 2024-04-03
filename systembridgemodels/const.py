@@ -1,6 +1,5 @@
 """Model constants."""
 
-# Model
 from enum import StrEnum
 
 from .keyboard_key import KeyboardKey
