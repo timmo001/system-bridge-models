@@ -1,8 +1,9 @@
 """Modules."""
+
 from __future__ import annotations
 
 from dataclasses import dataclass
-from enum import Enum
+from enum import StrEnum
 
 from .battery import Battery
 from .cpu import CPU
@@ -17,8 +18,8 @@ from .sensors import Sensors
 from .system import System
 
 
-class DataEnum(Enum):
-    """Data Enum."""
+class Module(StrEnum):
+    """Module Enum."""
 
     BATTERY = "battery"
     CPU = "cpu"
@@ -29,7 +30,7 @@ class DataEnum(Enum):
     MEMORY = "memory"
     NETWORKS = "networks"
     PROCESSES = "processes"
-    SENSORS = "sensor"
+    SENSORS = "sensors"
     SYSTEM = "system"
 
 
@@ -37,7 +38,7 @@ class DataEnum(Enum):
 class GetData:
     """Get Data."""
 
-    modules: list[str]
+    modules: list[Module]
 
 
 @dataclass

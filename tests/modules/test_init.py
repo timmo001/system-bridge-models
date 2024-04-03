@@ -1,24 +1,24 @@
 """Test the modules model."""
 
 from systembridgemodels.modules import (
-    DataEnum,
     GetData,
+    Module,
     ModulesData,
     RegisterDataListener,
 )
 
 modules = [
-    DataEnum.BATTERY.value,
-    DataEnum.CPU.value,
-    DataEnum.DISKS.value,
-    DataEnum.DISPLAYS.value,
-    DataEnum.GPUS.value,
-    DataEnum.MEDIA.value,
-    DataEnum.MEMORY.value,
-    DataEnum.NETWORKS.value,
-    DataEnum.PROCESSES.value,
-    DataEnum.SENSORS.value,
-    DataEnum.SYSTEM.value,
+    Module.BATTERY.value,
+    Module.CPU.value,
+    Module.DISKS.value,
+    Module.DISPLAYS.value,
+    Module.GPUS.value,
+    Module.MEDIA.value,
+    Module.MEMORY.value,
+    Module.NETWORKS.value,
+    Module.PROCESSES.value,
+    Module.SENSORS.value,
+    Module.SYSTEM.value,
 ]
 
 
