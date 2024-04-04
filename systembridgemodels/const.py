@@ -1,10 +1,12 @@
 """Model constants."""
-# Model
+
+from enum import StrEnum
+
 from .keyboard_key import KeyboardKey
 from .keyboard_text import KeyboardText
 from .media_directories import MediaDirectory
 from .media_files import MediaFile, MediaFiles
-from .modules import ModulesData
+from .modules import Module, ModulesData
 from .modules.battery import Battery
 from .modules.cpu import CPU
 from .modules.disks import Disks
@@ -21,51 +23,55 @@ from .open_path import OpenPath
 from .open_url import OpenUrl
 from .response import Response
 
-MODEL_BATTERY = "battery"
-MODEL_CPU = "cpu"
-MODEL_DATA = "data"
-MODEL_DISKS = "disks"
-MODEL_DISPLAYS = "displays"
-MODEL_GENERIC = "generic"
-MODEL_GPUS = "gpus"
-MODEL_KEYBOARD_KEY = "keyboard_key"
-MODEL_KEYBOARD_TEXT = "keyboard_text"
-MODEL_MEDIA = "media"
-MODEL_MEDIA_DIRECTORIES = "media_directories"
-MODEL_MEDIA_FILE = "media_file"
-MODEL_MEDIA_FILES = "media_files"
-MODEL_MEMORY = "memory"
-MODEL_NETWORKS = "networks"
-MODEL_NOTIFICATION = "notification"
-MODEL_OPEN_PATH = "open_path"
-MODEL_OPEN_URL = "open_url"
-MODEL_PROCESSES = "processes"
-MODEL_RESPONSE = "response"
-MODEL_SECRETS = "secrets"
-MODEL_SENSORS = "sensors"
-MODEL_SETTINGS = "settings"
-MODEL_SYSTEM = "system"
+
+class Model(StrEnum):
+    """Model Enums."""
+
+    BATTERY = Module.BATTERY
+    CPU = Module.CPU
+    DATA = "data"
+    DISKS = Module.DISKS
+    DISPLAYS = Module.DISPLAYS
+    GPUS = Module.GPUS
+    KEYBOARD_KEY = "keyboard_key"
+    KEYBOARD_TEXT = "keyboard_text"
+    MEDIA = Module.MEDIA
+    MEDIA_DIRECTORIES = "media_directories"
+    MEDIA_FILE = "media_file"
+    MEDIA_FILES = "media_files"
+    MEMORY = Module.MEMORY
+    NETWORKS = Module.NETWORKS
+    NOTIFICATION = "notification"
+    OPEN_PATH = "open_path"
+    OPEN_URL = "open_url"
+    PROCESSES = Module.PROCESSES
+    RESPONSE = "response"
+    SECRETS = "secrets"
+    SENSORS = Module.SENSORS
+    SETTINGS = "settings"
+    SYSTEM = Module.SYSTEM
+
 
 MODEL_MAP = {
-    MODEL_BATTERY: Battery,
-    MODEL_CPU: CPU,
-    MODEL_DATA: ModulesData,
-    MODEL_DISKS: Disks,
-    MODEL_DISPLAYS: Display, # Map to Display not list[Display] so it can be mapped
-    MODEL_GPUS: GPU, # Map to GPU not list[GPU] so it can be mapped
-    MODEL_KEYBOARD_KEY: KeyboardKey,
-    MODEL_KEYBOARD_TEXT: KeyboardText,
-    MODEL_MEDIA_DIRECTORIES: MediaDirectory, # Map to MediaDirectory not list[MediaDirectory] so it can be mapped
-    MODEL_MEDIA_FILE: MediaFile,
-    MODEL_MEDIA_FILES: MediaFiles,
-    MODEL_MEDIA: Media,
-    MODEL_MEMORY: Memory,
-    MODEL_NETWORKS: Networks,
-    MODEL_NOTIFICATION: Notification,
-    MODEL_OPEN_PATH: OpenPath,
-    MODEL_OPEN_URL: OpenUrl,
-    MODEL_PROCESSES: Process, # Map to Process not list[Process] so it can be mapped
-    MODEL_RESPONSE: Response,
-    MODEL_SENSORS: Sensors,
-    MODEL_SYSTEM: System,
+    Model.BATTERY: Battery,
+    Model.CPU: CPU,
+    Model.DATA: ModulesData,
+    Model.DISKS: Disks,
+    Model.DISPLAYS: Display,  # Map to Display not list[Display] so it can be mapped
+    Model.GPUS: GPU,  # Map to GPU not list[GPU] so it can be mapped
+    Model.KEYBOARD_KEY: KeyboardKey,
+    Model.KEYBOARD_TEXT: KeyboardText,
+    Model.MEDIA_DIRECTORIES: MediaDirectory,  # Map to MediaDirectory not list[MediaDirectory] so it can be mapped
+    Model.MEDIA_FILE: MediaFile,
+    Model.MEDIA_FILES: MediaFiles,
+    Model.MEDIA: Media,
+    Model.MEMORY: Memory,
+    Model.NETWORKS: Networks,
+    Model.NOTIFICATION: Notification,
+    Model.OPEN_PATH: OpenPath,
+    Model.OPEN_URL: OpenUrl,
+    Model.PROCESSES: Process,  # Map to Process not list[Process] so it can be mapped
+    Model.RESPONSE: Response,
+    Model.SENSORS: Sensors,
+    Model.SYSTEM: System,
 }
