@@ -1,12 +1,14 @@
 """Test the keyboard_text model."""
 
+from syrupy.assertion import SnapshotAssertion
+
 from systembridgemodels.keyboard_text import KeyboardText
 
 
-def test_keyboard_text():
+def test_keyboard_text(snapshot: SnapshotAssertion):
     """Test the keyboard_text."""
     keyboard_text = KeyboardText(
         text="Test",
     )
     assert isinstance(keyboard_text, KeyboardText)
-    assert keyboard_text.text == "Test"
+    assert keyboard_text == snapshot

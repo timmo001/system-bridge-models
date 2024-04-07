@@ -1,14 +1,15 @@
 """Test the media_get_file model."""
 
+from syrupy.assertion import SnapshotAssertion
+
 from systembridgemodels.media_get_file import MediaGetFile
 
 
-def test_media_get_file():
+def test_media_get_file(snapshot: SnapshotAssertion):
     """Test the media_get_file."""
     media_get_file = MediaGetFile(
         base="music",
         path="path/to/file",
     )
     assert isinstance(media_get_file, MediaGetFile)
-    assert media_get_file.base == "music"
-    assert media_get_file.path == "path/to/file"
+    assert media_get_file == snapshot

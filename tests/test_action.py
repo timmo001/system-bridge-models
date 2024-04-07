@@ -1,9 +1,11 @@
 """Test the action model."""
 
+from syrupy.assertion import SnapshotAssertion
+
 from systembridgemodels.action import Action
 
 
-def test_action():
+def test_action(snapshot: SnapshotAssertion):
     """Test action."""
     action = Action(
         command="command",
@@ -11,6 +13,4 @@ def test_action():
         label="label",
     )
     assert isinstance(action, Action)
-    assert action.command == "command"
-    assert action.data == {"key": "value"}
-    assert action.label == "label"
+    assert action == snapshot
