@@ -1,9 +1,11 @@
 """Test the media_directories model."""
 
+from syrupy.assertion import SnapshotAssertion
+
 from systembridgemodels.media_directories import MediaDirectory
 
 
-def test_media_directories():
+def test_media_directories(snapshot: SnapshotAssertion):
     """Test the media_directories."""
     media_directories = [
         MediaDirectory(
@@ -13,5 +15,4 @@ def test_media_directories():
     ]
     assert isinstance(media_directories, list)
     assert isinstance(media_directories[0], MediaDirectory)
-    assert media_directories[0].key == "music"
-    assert media_directories[0].path == "path/to/file"
+    assert media_directories == snapshot

@@ -1,13 +1,11 @@
 """Test const."""
 
-from collections.abc import Callable
+from syrupy.assertion import SnapshotAssertion
 
 from systembridgemodels.const import MODEL_MAP
 
 
-def test_model_map():
+def test_model_map(snapshot: SnapshotAssertion):
     """Test the model_map."""
     assert isinstance(MODEL_MAP, dict)
-    for key, value in MODEL_MAP.items():
-        assert isinstance(key, str)
-        assert isinstance(value, Callable)
+    assert snapshot == MODEL_MAP

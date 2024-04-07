@@ -1,9 +1,11 @@
 """Test the request model."""
 
+from syrupy.assertion import SnapshotAssertion
+
 from systembridgemodels.request import Request
 
 
-def test_request():
+def test_request(snapshot: SnapshotAssertion):
     """Test the request."""
     request = Request(
         token="abc123",
@@ -12,7 +14,4 @@ def test_request():
         data={"test": "test"},
     )
     assert isinstance(request, Request)
-    assert request.token == "abc123"
-    assert request.id == "abc123"
-    assert request.event == "EVENT_TEST"
-    assert request.data == {"test": "test"}
+    assert request == snapshot

@@ -1,17 +1,22 @@
 """Test the settings model."""
 
-from systembridgemodels.settings import Settings, SettingsAPI, SettingsMedia
+from syrupy.assertion import SnapshotAssertion
+
+from systembridgemodels.settings import Settings, SettingsAPI
 
 
-def test_settings():
+def test_settings(snapshot: SnapshotAssertion):
     """Test the settings."""
-    settings = Settings()
+    settings = Settings(
+        api=SettingsAPI(
+            token="token",
+        ),
+    )
     assert isinstance(settings, Settings)
-    assert isinstance(settings.api, SettingsAPI)
-    assert isinstance(settings.api.token, str)
-    assert isinstance(settings.api.port, int)
-    assert isinstance(settings.autostart, bool)
-    assert isinstance(settings.keyboard_hotkeys, list)
-    assert isinstance(settings.log_level, str)
-    assert isinstance(settings.media, SettingsMedia)
-    assert isinstance(settings.media.directories, list)
+    assert settings == snapshot
+
+
+def test_settings_token():
+    """Test the settings token."""
+    settings = Settings()
+    assert settings.api.token != ""

@@ -8,17 +8,17 @@ from systembridgemodels.modules import (
 )
 
 modules = [
-    Module.BATTERY.value,
-    Module.CPU.value,
-    Module.DISKS.value,
-    Module.DISPLAYS.value,
-    Module.GPUS.value,
-    Module.MEDIA.value,
-    Module.MEMORY.value,
-    Module.NETWORKS.value,
-    Module.PROCESSES.value,
-    Module.SENSORS.value,
-    Module.SYSTEM.value,
+    Module.BATTERY,
+    Module.CPU,
+    Module.DISKS,
+    Module.DISPLAYS,
+    Module.GPUS,
+    Module.MEDIA,
+    Module.MEMORY,
+    Module.NETWORKS,
+    Module.PROCESSES,
+    Module.SENSORS,
+    Module.SYSTEM,
 ]
 
 
