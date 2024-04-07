@@ -1,15 +1,8 @@
 """Test the settings model."""
 
 from syrupy.assertion import SnapshotAssertion
-from syrupy.filters import props
 
-from systembridgemodels.settings import (
-    SettingDirectory,
-    SettingHotkey,
-    Settings,
-    SettingsAPI,
-    SettingsMedia,
-)
+from systembridgemodels.settings import Settings, SettingsAPI
 
 
 def test_settings(snapshot: SnapshotAssertion):
