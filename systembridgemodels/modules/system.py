@@ -1,7 +1,16 @@
 """System."""
+
 from __future__ import annotations
 
 from dataclasses import dataclass
+from enum import StrEnum
+
+
+class RunMode(StrEnum):
+    """Run Mode."""
+
+    STANDALONE = "standalone"
+    PYTHON = "python"
 
 
 @dataclass
@@ -27,6 +36,7 @@ class System:
     mac_address: str
     platform_version: str
     platform: str
+    run_mode: RunMode
     uptime: float
     users: list[SystemUser]
     uuid: str

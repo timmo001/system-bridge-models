@@ -1,5 +1,6 @@
 """Fixture for system module."""
-from systembridgemodels.modules.system import System, SystemUser
+
+from systembridgemodels.modules.system import RunMode, System, SystemUser
 
 FIXTURE_SYSTEM = System(
     boot_time=1234,
@@ -9,6 +10,7 @@ FIXTURE_SYSTEM = System(
     mac_address="00:00:00:00:00:00",
     platform_version="1.0.0",
     platform="platform",
+    run_mode=RunMode.STANDALONE,
     uptime=1234,
     users=[
         SystemUser(
