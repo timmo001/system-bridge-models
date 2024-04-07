@@ -5,7 +5,7 @@ from dataclasses import asdict
 from syrupy.assertion import SnapshotAssertion
 
 from systembridgemodels.fixtures.modules.memory import FIXTURE_MEMORY
-from systembridgemodels.modules.memory import Memory, MemorySwap, MemoryVirtual
+from systembridgemodels.modules.memory import Memory
 
 
 def test_memory(snapshot: SnapshotAssertion):

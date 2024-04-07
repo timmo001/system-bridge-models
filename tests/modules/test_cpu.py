@@ -5,7 +5,7 @@ from dataclasses import asdict
 from syrupy.assertion import SnapshotAssertion
 
 from systembridgemodels.fixtures.modules.cpu import FIXTURE_CPU
-from systembridgemodels.modules.cpu import CPU, CPUFrequency, CPUStats, CPUTimes, PerCPU
+from systembridgemodels.modules.cpu import CPU, PerCPU
 
 
 def test_cpu(snapshot: SnapshotAssertion):
