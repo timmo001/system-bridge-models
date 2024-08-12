@@ -36,7 +36,6 @@ class System:
     mac_address: str
     platform_version: str
     platform: str
-    run_mode: RunMode
     uptime: float
     users: list[SystemUser]
     uuid: str
@@ -44,6 +43,7 @@ class System:
     camera_usage: list[str] | None = None
     ip_address_6: str | None = None
     pending_reboot: bool | None = None
+    run_mode: RunMode | None = None
     version_latest_url: str | None = None
     version_latest: str | None = None
     version_newer_available: bool | None = None
