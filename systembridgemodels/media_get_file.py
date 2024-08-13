@@ -4,7 +4,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 
 
-@dataclass
+@dataclass(slots=True)
 class MediaGetFile:
     """Media Get File."""
 

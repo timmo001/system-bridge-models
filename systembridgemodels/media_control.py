@@ -24,7 +24,7 @@ class MediaAction(Enum):
     VOLUMEUP = "VOLUMEUP"
 
 
-@dataclass
+@dataclass(slots=True)
 class MediaControl:
     """Media Control."""
 

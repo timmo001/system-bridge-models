@@ -3,8 +3,11 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
+from . import filter_unexpected_fields
 
-@dataclass
+
+@filter_unexpected_fields
+@dataclass(slots=True)
 class Battery:
     """Battery."""
 

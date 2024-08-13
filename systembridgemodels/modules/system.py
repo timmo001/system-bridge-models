@@ -5,6 +5,8 @@ from __future__ import annotations
 from dataclasses import dataclass
 from enum import StrEnum
 
+from . import filter_unexpected_fields
+
 
 class RunMode(StrEnum):
     """Run Mode."""
@@ -13,7 +15,8 @@ class RunMode(StrEnum):
     PYTHON = "python"
 
 
-@dataclass
+@filter_unexpected_fields
+@dataclass(slots=True)
 class SystemUser:
     """System User."""
 
@@ -25,7 +28,8 @@ class SystemUser:
     pid: float
 
 
-@dataclass
+@filter_unexpected_fields
+@dataclass(slots=True)
 class System:
     """System."""
 
