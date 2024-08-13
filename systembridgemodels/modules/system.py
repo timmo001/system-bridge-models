@@ -5,7 +5,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from enum import StrEnum
 
-from . import filter_unexpected_fields
+from ..helpers import filter_unexpected_fields
 
 
 class RunMode(StrEnum):
