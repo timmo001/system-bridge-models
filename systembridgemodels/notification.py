@@ -5,7 +5,7 @@ from dataclasses import dataclass
 from typing import Any, cast
 
 
-@dataclass
+@dataclass(slots=True)
 class Action:
     """Notification Action."""
 
@@ -14,7 +14,7 @@ class Action:
     data: dict[str, Any] | None = None
 
 
-@dataclass
+@dataclass(slots=True)
 class Audio:
     """Notification Audio."""
 
@@ -22,7 +22,7 @@ class Audio:
     volume: float | None = None
 
 
-@dataclass
+@dataclass(slots=True)
 class Notification:
     """Notification."""
 

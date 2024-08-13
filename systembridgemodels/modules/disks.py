@@ -4,8 +4,11 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import cast
 
+from . import filter_unexpected_fields
 
-@dataclass
+
+@filter_unexpected_fields
+@dataclass(slots=True)
 class DiskIOCounters:
     """Disk IO Counters."""
 
@@ -17,7 +20,8 @@ class DiskIOCounters:
     write_time: int
 
 
-@dataclass
+@filter_unexpected_fields
+@dataclass(slots=True)
 class DiskUsage:
     """Disk Usage."""
 
@@ -27,7 +31,8 @@ class DiskUsage:
     percent: float
 
 
-@dataclass
+@filter_unexpected_fields
+@dataclass(slots=True)
 class DiskPartition:
     """Disk Partition."""
 
@@ -45,7 +50,8 @@ class DiskPartition:
             self.usage = DiskUsage(**self.usage)
 
 
-@dataclass
+@filter_unexpected_fields
+@dataclass(slots=True)
 class Disk:
     """Disk."""
 
@@ -68,7 +74,8 @@ class Disk:
             self.io_counters = DiskIOCounters(**self.io_counters)
 
 
-@dataclass
+@filter_unexpected_fields
+@dataclass(slots=True)
 class Disks:
     """Disks."""
 

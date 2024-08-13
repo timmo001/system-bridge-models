@@ -5,7 +5,7 @@ from dataclasses import dataclass, field
 from typing import Any
 
 
-@dataclass
+@dataclass(slots=True)
 class Request:
     """Request."""
 

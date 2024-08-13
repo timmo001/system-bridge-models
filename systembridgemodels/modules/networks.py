@@ -1,11 +1,15 @@
 """Networks."""
+
 from __future__ import annotations
 
 from dataclasses import dataclass
 from typing import cast
 
+from . import filter_unexpected_fields
 
-@dataclass
+
+@filter_unexpected_fields
+@dataclass(slots=True)
 class NetworkAddress:
     """Network Address."""
 
@@ -16,7 +20,8 @@ class NetworkAddress:
     ptp: str | None = None
 
 
-@dataclass
+@filter_unexpected_fields
+@dataclass(slots=True)
 class NetworkStats:
     """Network Stats."""
 
@@ -27,7 +32,8 @@ class NetworkStats:
     flags: list[str] | None = None
 
 
-@dataclass
+@filter_unexpected_fields
+@dataclass(slots=True)
 class NetworkConnection:
     """Network Connection."""
 
@@ -40,7 +46,8 @@ class NetworkConnection:
     pid: int | None = None
 
 
-@dataclass
+@filter_unexpected_fields
+@dataclass(slots=True)
 class NetworkIO:
     """Network IO."""
 
@@ -54,7 +61,8 @@ class NetworkIO:
     dropout: int | None = None
 
 
-@dataclass
+@filter_unexpected_fields
+@dataclass(slots=True)
 class Network:
     """Network."""
 
@@ -78,7 +86,8 @@ class Network:
             self.stats = NetworkStats(**stats)
 
 
-@dataclass
+@filter_unexpected_fields
+@dataclass(slots=True)
 class Networks:
     """Networks."""
 

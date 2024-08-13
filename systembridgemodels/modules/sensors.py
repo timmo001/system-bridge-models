@@ -1,11 +1,15 @@
 """System."""
+
 from __future__ import annotations
 
 from dataclasses import dataclass
 from typing import Any, cast
 
+from . import filter_unexpected_fields
 
-@dataclass
+
+@filter_unexpected_fields
+@dataclass(slots=True)
 class SensorsWindowsSensor:
     """Sensors Windows Sensor."""
 
@@ -15,7 +19,8 @@ class SensorsWindowsSensor:
     value: float | int | str | None = None
 
 
-@dataclass
+@filter_unexpected_fields
+@dataclass(slots=True)
 class SensorsWindowsHardware:
     """Sensors Windows Hardware."""
 
@@ -46,7 +51,8 @@ class SensorsWindowsHardware:
             self.sensors = new_sensors
 
 
-@dataclass
+@filter_unexpected_fields
+@dataclass(slots=True)
 class SensorsNVIDIAChipset:
     """Sensors NVIDIA Chipset."""
 
@@ -57,7 +63,8 @@ class SensorsNVIDIAChipset:
     vendor_name: str
 
 
-@dataclass
+@filter_unexpected_fields
+@dataclass(slots=True)
 class SensorsNVIDIADisplay:
     """Sensors NVIDIA Display."""
 
@@ -81,7 +88,8 @@ class SensorsNVIDIADisplay:
     resolution_vertical: int
 
 
-@dataclass
+@filter_unexpected_fields
+@dataclass(slots=True)
 class SensorsNVIDIADriver:
     """Sensors NVIDIA Driver."""
 
@@ -90,7 +98,8 @@ class SensorsNVIDIADriver:
     version: int
 
 
-@dataclass
+@filter_unexpected_fields
+@dataclass(slots=True)
 class SensorsNVIDIAGPU:
     """Sensors NVIDIA GPU."""
 

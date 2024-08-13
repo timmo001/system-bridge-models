@@ -1,11 +1,15 @@
 """CPU."""
+
 from __future__ import annotations
 
 from dataclasses import dataclass
 from typing import cast
 
+from . import filter_unexpected_fields
 
-@dataclass
+
+@filter_unexpected_fields
+@dataclass(slots=True)
 class CPUFrequency:
     """CPU Frequency."""
 
@@ -14,7 +18,8 @@ class CPUFrequency:
     max: float | None = None
 
 
-@dataclass
+@filter_unexpected_fields
+@dataclass(slots=True)
 class CPUStats:
     """CPU Stats."""
 
@@ -24,7 +29,8 @@ class CPUStats:
     syscalls: int | None = None
 
 
-@dataclass
+@filter_unexpected_fields
+@dataclass(slots=True)
 class CPUTimes:
     """CPU Times."""
 
@@ -35,7 +41,8 @@ class CPUTimes:
     dpc: float | None = None
 
 
-@dataclass
+@filter_unexpected_fields
+@dataclass(slots=True)
 class PerCPU:
     """Per CPU."""
 
@@ -59,7 +66,8 @@ class PerCPU:
             self.times_percent = CPUTimes(**self.times_percent)
 
 
-@dataclass
+@filter_unexpected_fields
+@dataclass(slots=True)
 class CPU:
     """CPU."""
 

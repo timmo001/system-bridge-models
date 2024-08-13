@@ -5,7 +5,7 @@ from dataclasses import dataclass
 from typing import cast
 
 
-@dataclass
+@dataclass(slots=True)
 class MediaFile:
     """Media File."""
 
@@ -22,7 +22,7 @@ class MediaFile:
     mime_type: str | None = None
 
 
-@dataclass
+@dataclass(slots=True)
 class MediaFiles:
     """Media Files."""
 
