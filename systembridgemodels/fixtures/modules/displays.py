@@ -14,5 +14,11 @@ FIXTURE_DISPLAYS = [
         is_primary=True,
         pixel_clock=60.0,
         refresh_rate=60.0,
+        brightness=100,
+        contrast=100,
+        volume=100,
+        power_state=0x01,
+        input_source=0x0F,
+        sdr_white_level=1,
     )
 ]
