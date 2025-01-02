@@ -5,7 +5,7 @@ from dataclasses import dataclass
 from enum import Enum
 
 
-class DisplaySetting(Enum):
+class DisplaySetting(str, Enum):
     """Display setting field names."""
 
     BRIGHTNESS = "brightness"
@@ -21,5 +21,5 @@ class DisplayUpdateSettingOp:
     """Set display parameters."""
 
     monitor_id: int
-    setting: str
+    setting: DisplaySetting
     value: int
