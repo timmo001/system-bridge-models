@@ -1,6 +1,51 @@
 # serializer version: 1
+# name: test_display_asdict
+  list([
+    dict({
+      'brightness': 100,
+      'contrast': 100,
+      'height': 1080,
+      'id': 'abc123',
+      'input_source': 15,
+      'is_primary': True,
+      'name': 'name',
+      'pixel_clock': 60.0,
+      'power_state': 1,
+      'refresh_rate': 60.0,
+      'resolution_horizontal': 1920,
+      'resolution_vertical': 1080,
+      'sdr_white_level': 1,
+      'vcp_supported': True,
+      'volume': 100,
+      'width': 1920,
+      'x': 1920,
+      'y': 1080,
+    }),
+    dict({
+      'brightness': None,
+      'contrast': None,
+      'height': None,
+      'id': 'DISPLAY2',
+      'input_source': <InputSource.DP1: 15>,
+      'is_primary': None,
+      'name': 'display_with_enums',
+      'pixel_clock': None,
+      'power_state': <PowerMode.on: 1>,
+      'refresh_rate': None,
+      'resolution_horizontal': 1920,
+      'resolution_vertical': 1080,
+      'sdr_white_level': None,
+      'vcp_supported': False,
+      'volume': None,
+      'width': None,
+      'x': 1920,
+      'y': 1080,
+    }),
+  ])
+# ---
 # name: test_displays
   list([
     Display(id='abc123', name='name', resolution_horizontal=1920, resolution_vertical=1080, x=1920, y=1080, width=1920, height=1080, is_primary=True, pixel_clock=60.0, refresh_rate=60.0, vcp_supported=True, brightness=100, contrast=100, volume=100, power_state=1, input_source=15, sdr_white_level=1),
+    Display(id='DISPLAY2', name='display_with_enums', resolution_horizontal=1920, resolution_vertical=1080, x=1920, y=1080, width=None, height=None, is_primary=None, pixel_clock=None, refresh_rate=None, vcp_supported=False, brightness=None, contrast=None, volume=None, power_state=<PowerMode.on: 1>, input_source=<InputSource.DP1: 15>, sdr_white_level=None),
   ])
 # ---
