@@ -14,6 +14,7 @@ FIXTURE_DISPLAYS = [
         is_primary=True,
         pixel_clock=60.0,
         refresh_rate=60.0,
+        vcp_supported=True,
         brightness=100,
         contrast=100,
         volume=100,

@@ -22,6 +22,7 @@ class Display:
     is_primary: bool | None = None
     pixel_clock: float | None = None
     refresh_rate: float | None = None
+    vcp_supported: bool = False
     brightness: int | None = None
     contrast: int | None = None
     volume: int | None = None
