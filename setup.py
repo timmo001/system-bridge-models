@@ -6,7 +6,7 @@ with open("README.md", encoding="utf-8") as f:
 
 setup(
     name="systembridgemodels",
-    version="5.1.1.dev0",
+    version="5.1.1",
     author="Aidan Timson (Timmo)",
     author_email="aidan@timmo.dev",
     description="System Bridge Models",
