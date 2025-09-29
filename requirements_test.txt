@@ -4,4 +4,4 @@ pytest-cov==6.2.1
 pytest-sugar==1.0.0
 pytest-timeout==2.4.0
 pytest==8.4.1
-syrupy==4.9.1
+syrupy==5.0.0
